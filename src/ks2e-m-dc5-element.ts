@@ -1,5 +1,5 @@
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from './pin';
 
 const y1Pos = 5.1;
@@ -11,6 +11,14 @@ const x4Pos = 74;
 
 @customElement('wokwi-ks2e-m-dc5')
 export class KS2EMDC5Element extends LitElement {
+  // Energized indicator (coil driven) - same property name/shape as
+  // LEDElement's own `value`, so this can be driven by the exact same
+  // generic "read" role code the signal chain already has for LEDs (no
+  // relay-specific code needed there). Defaults to false, matching this
+  // element's only appearance before this property existed - the glow
+  // below is purely additive, nothing existing was changed to add it.
+  @property() value = false;
+
   readonly pinInfo: ElementPin[] = [
     { name: 'NO2', x: x1Pos, y: y1Pos, signals: [], number: 8 },
     { name: 'NC2', x: x2Pos, y: y1Pos, signals: [], number: 6 },
@@ -48,6 +56,19 @@ export class KS2EMDC5Element extends LitElement {
         <text fill="#4a3510" font-family="sans-serif" font-size="2.8222px">
           <tspan x="1.07" y="6.03">KS2E-M-DC5</tspan>
         </text>
+        ${this.value
+          ? html`
+              <defs>
+                <filter id="energizedGlow" x="-1" y="-1" width="3" height="3">
+                  <feGaussianBlur stdDeviation="0.6" />
+                </filter>
+              </defs>
+              <g>
+                <circle cx="19.38" cy="5" r="1.4" fill="#5cff5c" filter="url(#energizedGlow)" opacity="0.85" />
+                <circle cx="19.38" cy="5" r="0.4" fill="#eaffea" />
+              </g>
+            `
+          : null}
       </svg>
     `;
   }
