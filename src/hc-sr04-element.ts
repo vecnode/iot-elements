@@ -1,9 +1,16 @@
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from './pin';
 
 @customElement('wokwi-hc-sr04')
 export class HCSR04Element extends LitElement {
+  // Echo/triggered indicator - same property name/shape as LEDElement's
+  // own `value`, so this can be driven by physicalsim's existing generic
+  // "read" role signal-chain code with no component-specific changes
+  // there. Defaults to false, matching this element's only appearance
+  // before this property existed - the glow below is purely additive.
+  @property() value = false;
+
   readonly pinInfo: ElementPin[] = [
     { name: 'VCC', x: 71.3, y: 94.5, signals: [{ type: 'power', signal: 'VCC', voltage: 5 }] },
     { name: 'TRIG', x: 81.3, y: 94.5, signals: [] },
@@ -93,6 +100,19 @@ export class HCSR04Element extends LitElement {
           <tspan x="-17.591" y="24.641">ECHO</tspan>
           <tspan x="-17.591" y="27.181">GND</tspan>
         </text>
+        ${this.value
+          ? html`
+              <defs>
+                <filter id="hcsr04Glow" x="-1" y="-1" width="3" height="3">
+                  <feGaussianBlur stdDeviation="1" />
+                </filter>
+              </defs>
+              <g>
+                <circle cx="22.5" cy="2.5" r="1.4" fill="#5cff5c" filter="url(#hcsr04Glow)" opacity="0.85" />
+                <circle cx="22.5" cy="2.5" r="0.4" fill="#eaffea" />
+              </g>
+            `
+          : null}
       </svg>
     `;
   }

@@ -1,9 +1,16 @@
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import { ElementPin, GND, VCC } from './pin';
 
 @customElement('wokwi-ir-receiver')
 export class IRReceiverElement extends LitElement {
+  // Signal-received indicator - same property name/shape as LEDElement's
+  // own `value`, so this can be driven by physicalsim's existing generic
+  // "read" role signal-chain code with no component-specific changes
+  // there. Defaults to false, matching this element's only appearance
+  // before this property existed - the glow below is purely additive.
+  @property() value = false;
+
   readonly pinInfo: ElementPin[] = [
     { name: 'GND', y: 87.75, x: 20.977, number: 1, signals: [GND()] },
     { name: 'VCC', y: 87.75, x: 30.578, number: 2, signals: [VCC()] },
@@ -123,6 +130,19 @@ export class IRReceiverElement extends LitElement {
           </text>
           <rect x="17.9" y="33.7" width="3.93" height="3.23" fill="#ccf9f9" />
         </g>
+        ${this.value
+          ? html`
+              <defs>
+                <filter id="irReceiverGlow" x="-1" y="-1" width="3" height="3">
+                  <feGaussianBlur stdDeviation="1" />
+                </filter>
+              </defs>
+              <g>
+                <circle cx="52" cy="45" r="3" fill="#5cff5c" filter="url(#irReceiverGlow)" opacity="0.85" />
+                <circle cx="52" cy="45" r="0.9" fill="#eaffea" />
+              </g>
+            `
+          : null}
       </svg>
     `;
   }
