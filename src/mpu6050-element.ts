@@ -5,7 +5,12 @@ import { GND, i2c, VCC } from './pin';
 
 @customElement('wokwi-mpu6050')
 export class MPU6050Element extends LitElement {
-  @property() led1 = false;
+  // Renamed from led1 - matches LEDElement's own `value` naming so this
+  // can be driven by physicalsim's existing generic "read" role
+  // signal-chain code with no component-specific changes there. Not tied
+  // to any real MPU6050 pin/behavior (never was, even under the old
+  // name) - real accelerometer/gyro data needs I2C, which isn't emulated.
+  @property() value = false;
 
   readonly pinInfo: ElementPin[] = [
     { name: 'INT', x: 7.28, y: 5.78, signals: [] },
@@ -19,7 +24,7 @@ export class MPU6050Element extends LitElement {
   ];
 
   render() {
-    const { led1 } = this;
+    const { value } = this;
     return html`
       <svg
         width="21.6mm"
@@ -122,7 +127,7 @@ export class MPU6050Element extends LitElement {
         <filter id="ledFilter" x="-0.8" y="-0.8" height="5.2" width="5.8">
           <feGaussianBlur stdDeviation="2" />
         </filter>
-        ${led1 &&
+        ${value &&
         svg`<circle cx="13.9" cy="25.5" r="3.5" fill="#80ff80" filter="url(#ledFilter)" />`}
 
         <!-- PCB Pins-->

@@ -5,13 +5,13 @@ export default {
   title: 'MPU6050',
   component: 'wokwi-mpu6050',
   argTypes: {
-    led1: { control: { type: 'boolean' } },
+    value: { control: { type: 'boolean' } },
   },
   args: {
-    led1: false,
+    value: false,
   },
 };
 
-const Template = ({ led1 }) => html` <wokwi-mpu6050 .led1=${led1}></wokwi-mpu6050>`;
+const Template = ({ value }) => html` <wokwi-mpu6050 .value=${value}></wokwi-mpu6050>`;
 
 export const Default = Template.bind({});
