@@ -33,6 +33,7 @@ export { MembraneKeypadElement } from './membrane-keypad-element';
 export { MicrosdCardElement } from './microsd-card-element';
 export { MPU6050Element } from './mpu6050-element';
 export { NanoRP2040ConnectElement } from './nano-rp2040-connect-element';
+export { PiPicoElement } from './pi-pico-element';
 export { NeoPixelElement } from './neopixel-element';
 export { NeopixelMatrixElement } from './neopixel-matrix-element';
 export { NTCTemperatureSensorElement } from './ntc-temperature-sensor-element';

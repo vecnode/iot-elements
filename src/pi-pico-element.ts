@@ -1,0 +1,106 @@
+import { css, html, LitElement, svg } from 'lit';
+import { customElement } from 'lit/decorators.js';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
+import { analog, ElementPin, GND, VCC } from './pin';
+
+// Real Raspberry Pi Pico board artwork, sourced from wokwi/wokwi-boards
+// (boards/pi-pico/board.svg + board.json, Uri Shaked) - vendored into
+// vecnode/wokwi-elements per an explicit user decision (2026-07-24) to
+// use Wokwi's own official assets rather than redraw them, despite that
+// repo shipping no LICENSE file (unlike avr8js/rp2040js/wokwi-elements
+// itself, all clearly MIT). Kept as a raw imported asset
+// (assets/pi-pico-board.svg / .json), not redrawn as inline template
+// literal paths the way most other elements here are, specifically so
+// the vendored art stays byte-identical to the upstream source and any
+// future licensing resolution (or upstream update) is a one-file swap,
+// not a re-drawing job.
+//
+// board.json's pin coordinates are in mm (its own `width`/`height`
+// fields: 20.9 x 52.75), but board.svg's own viewBox (826.782 x
+// 2086.626) is a different internal unit system - the wrapping <g
+// transform="scale(...)"> below normalizes the pasted artwork down to
+// the same mm-based viewBox convention every other element here uses
+// (see potentiometer-element.ts's own `viewBox="0 0 20 20"`, 1 unit =
+// 1mm), rather than rescaling every pin coordinate up into the
+// artwork's native unit space.
+import rawBoardSvg from './assets/pi-pico-board.svg?raw';
+
+const BOARD_WIDTH_MM = 20.9;
+const BOARD_HEIGHT_MM = 52.75;
+// board.svg's own viewBox width (826.782) / BOARD_WIDTH_MM - confirmed
+// consistent against the height axis too (2086.626 / 52.75 ~= same
+// ratio, matching rounding in the original artwork's own units).
+const SVG_TO_MM_SCALE = BOARD_WIDTH_MM / 826.782;
+
+@customElement('wokwi-pi-pico')
+export class PiPicoElement extends LitElement {
+  // Real pin map, from board.json's own `pins` object - GP0-GP22/GP26-
+  // GP28 broken out on the header, plus power/ground/RUN/ADC_VREF. GP23-
+  // 25 are deliberately not header-exposed on real hardware either
+  // (board.json's own "virtual pins" TP4/TP5 map to them - TP5/GPIO25 is
+  // the onboard LED, matching what physicalsim's own rp2040-blink
+  // example already uses).
+  readonly pinInfo: ElementPin[] = [
+    { name: 'GP0', x: 1.6, y: 3.4, signals: [] },
+    { name: 'GP1', x: 1.6, y: 5.94, signals: [] },
+    { name: 'GND.1', x: 1.6, y: 8.48, signals: [GND()] },
+    { name: 'GP2', x: 1.6, y: 11.02, signals: [] },
+    { name: 'GP3', x: 1.6, y: 13.56, signals: [] },
+    { name: 'GP4', x: 1.6, y: 16.1, signals: [] },
+    { name: 'GP5', x: 1.6, y: 18.64, signals: [] },
+    { name: 'GND.2', x: 1.6, y: 21.18, signals: [GND()] },
+    { name: 'GP6', x: 1.6, y: 23.72, signals: [] },
+    { name: 'GP7', x: 1.6, y: 26.26, signals: [] },
+    { name: 'GP8', x: 1.6, y: 28.8, signals: [] },
+    { name: 'GP9', x: 1.6, y: 31.34, signals: [] },
+    { name: 'GND.3', x: 1.6, y: 33.88, signals: [GND()] },
+    { name: 'GP10', x: 1.6, y: 36.42, signals: [] },
+    { name: 'GP11', x: 1.6, y: 38.96, signals: [] },
+    { name: 'GP12', x: 1.6, y: 41.49, signals: [] },
+    { name: 'GP13', x: 1.6, y: 44.03, signals: [] },
+    { name: 'GND.4', x: 1.6, y: 46.57, signals: [GND()] },
+    { name: 'GP14', x: 1.6, y: 49.11, signals: [] },
+    { name: 'GP15', x: 1.6, y: 51.65, signals: [] },
+    { name: 'GP16', x: 19.3, y: 51.65, signals: [] },
+    { name: 'GP17', x: 19.3, y: 49.11, signals: [] },
+    { name: 'GND.5', x: 19.3, y: 46.57, signals: [GND()] },
+    { name: 'GP18', x: 19.3, y: 44.03, signals: [] },
+    { name: 'GP19', x: 19.3, y: 41.49, signals: [] },
+    { name: 'GP20', x: 19.3, y: 38.96, signals: [] },
+    { name: 'GP21', x: 19.3, y: 36.42, signals: [] },
+    { name: 'GND.6', x: 19.3, y: 33.88, signals: [GND()] },
+    { name: 'GP22', x: 19.3, y: 31.34, signals: [] },
+    { name: 'RUN', x: 19.3, y: 28.8, signals: [] },
+    { name: 'GP26', x: 19.3, y: 26.26, signals: [analog(0)] },
+    { name: 'GP27', x: 19.3, y: 23.72, signals: [analog(1)] },
+    { name: 'GND.7', x: 19.3, y: 21.18, signals: [GND()] },
+    { name: 'GP28', x: 19.3, y: 18.64, signals: [analog(2)] },
+    { name: 'ADC_VREF', x: 19.3, y: 16.1, signals: [] },
+    { name: '3V3', x: 19.3, y: 13.56, signals: [VCC(3.3)] },
+    { name: '3V3_EN', x: 19.3, y: 11.02, signals: [] },
+    { name: 'GND.8', x: 19.3, y: 8.48, signals: [GND()] },
+    { name: 'VSYS', x: 19.3, y: 5.94, signals: [VCC(3.3)] },
+    { name: 'VBUS', x: 19.3, y: 3.4, signals: [VCC(5)] },
+  ];
+
+  static get styles() {
+    return css`
+      :host {
+        display: inline-block;
+      }
+    `;
+  }
+
+  render() {
+    return html`
+      <svg
+        width="${BOARD_WIDTH_MM}mm"
+        height="${BOARD_HEIGHT_MM}mm"
+        viewBox="0 0 ${BOARD_WIDTH_MM} ${BOARD_HEIGHT_MM}"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g transform="scale(${SVG_TO_MM_SCALE})">${unsafeSVG(rawBoardSvg)}</g>
+      </svg>
+    `;
+  }
+}
