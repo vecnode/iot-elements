@@ -1,9 +1,16 @@
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import { ElementPin, GND, VCC } from './pin';
 
 @customElement('wokwi-pir-motion-sensor')
 export class PIRMotionSensorElement extends LitElement {
+  // Motion-detected indicator - same property name/shape as LEDElement's
+  // own `value`, so this can be driven by the exact same generic "read"
+  // role code the signal chain already has for LEDs. Defaults to false,
+  // matching this element's only appearance before this property
+  // existed - the glow below is purely additive.
+  @property() value = false;
+
   readonly pinInfo: ElementPin[] = [
     { name: 'VCC', y: 92, x: 36.178, number: 1, signals: [VCC()] },
     { name: 'OUT', y: 92, x: 45.9175, number: 2, signals: [] },
@@ -107,6 +114,19 @@ export class PIRMotionSensorElement extends LitElement {
           <tspan x="43.531" y="72.609" font-size="6.38px">D</tspan>
         </text>
         <path d="m57.9 70.8h-4.67v-0.81h4.67z" fill="#fff" />
+        ${this.value
+          ? html`
+              <defs>
+                <filter id="motionGlow" x="-1" y="-1" width="3" height="3">
+                  <feGaussianBlur stdDeviation="2" />
+                </filter>
+              </defs>
+              <g>
+                <circle cx="46.7" cy="33.8" r="9" fill="#ff5c5c" filter="url(#motionGlow)" opacity="0.55" />
+                <circle cx="46.7" cy="33.8" r="2.5" fill="#ffeaea" />
+              </g>
+            `
+          : null}
       </svg>
     `;
   }

@@ -1,10 +1,17 @@
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { GND, VCC } from './pin';
 
 @customElement('wokwi-tilt-switch')
 export class TiltSwitchElement extends LitElement {
+  // Closed-circuit indicator - same property name/shape as LEDElement's
+  // own `value`, so this can be driven by the exact same generic "read"
+  // role code the signal chain already has for LEDs. Defaults to false,
+  // matching this element's only appearance before this property
+  // existed - the glow below is purely additive.
+  @property() value = false;
+
   readonly pinInfo: ElementPin[] = [
     { name: 'GND', y: 18, x: 88, number: 1, signals: [GND()] },
     { name: 'VCC', y: 27.8, x: 88, number: 2, signals: [VCC()] },
@@ -214,6 +221,19 @@ export class TiltSwitchElement extends LitElement {
           d="m42.2 6.32c-0.256-0.299-0.705-0.334-1-0.078-3.3 2.82-20.7 17.7-24 20.5-0.299 0.255-0.334 0.705-0.078 1 1.83 2.14 8.55 9.99 10.4 12.1 0.256 0.299 0.706 0.334 1 0.078 3.3-2.82 20.7-17.7 24-20.5 0.299-0.256 0.334-0.705 0.078-1-1.83-2.14-8.55-9.99-10.4-12.1z"
           fill="#4a91ce"
         />
+        ${this.value
+          ? html`
+              <defs>
+                <filter id="closedGlow" x="-1" y="-1" width="3" height="3">
+                  <feGaussianBlur stdDeviation="1.2" />
+                </filter>
+              </defs>
+              <g>
+                <circle cx="80" cy="27.8" r="3" fill="#5cff5c" filter="url(#closedGlow)" opacity="0.85" />
+                <circle cx="80" cy="27.8" r="0.9" fill="#eaffea" />
+              </g>
+            `
+          : null}
       </svg>
     `;
   }
