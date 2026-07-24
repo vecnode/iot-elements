@@ -1,9 +1,20 @@
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import { analog, ElementPin, GND, VCC } from './pin';
 
 @customElement('wokwi-ntc-temperature-sensor')
 export class NTCTemperatureSensorElement extends LitElement {
+  // Threshold-active indicator - same property name/shape as LEDElement's
+  // own `value`, so this can be driven by physicalsim's existing generic
+  // "read" role signal-chain code with no component-specific changes
+  // there. A boolean glow rather than the sensor's actual (analog, ADC-
+  // blocked today - see OUT's own `analog(0)` signal below) temperature
+  // reading, same "visual capability now, real wiring later" posture as
+  // the other sensors gaining this property. Defaults to false, matching
+  // this element's only appearance before this property existed - the
+  // glow below is purely additive.
+  @property() value = false;
+
   readonly pinInfo: ElementPin[] = [
     { name: 'GND', y: 26.2, x: 135, number: 1, signals: [GND()] },
     { name: 'VCC', y: 35.8, x: 135, number: 2, signals: [VCC()] },
@@ -117,6 +128,19 @@ export class NTCTemperatureSensorElement extends LitElement {
           <tspan x="-61.485" y="111.57" font-size="9.778px">S</tspan>
           <tspan x="-15.512" y="111.573" font-size="15.828px">-</tspan>
         </text>
+        ${this.value
+          ? html`
+              <defs>
+                <filter id="ntcGlow" x="-1" y="-1" width="3" height="3">
+                  <feGaussianBlur stdDeviation="1.4" />
+                </filter>
+              </defs>
+              <g>
+                <circle cx="15" cy="65" r="4" fill="#ff9f40" filter="url(#ntcGlow)" opacity="0.85" />
+                <circle cx="15" cy="65" r="1.1" fill="#fff2e0" />
+              </g>
+            `
+          : null}
       </svg>
     `;
   }

@@ -1,9 +1,16 @@
 import { html, LitElement } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from './pin';
 
 @customElement('wokwi-dht22')
 export class DHT22Element extends LitElement {
+  // Reading-active indicator - same property name/shape as LEDElement's
+  // own `value`, so this can be driven by physicalsim's existing generic
+  // "read" role signal-chain code with no component-specific changes
+  // there. Defaults to false, matching this element's only appearance
+  // before this property existed - the glow below is purely additive.
+  @property() value = false;
+
   readonly pinInfo: ElementPin[] = [
     { name: 'VCC', x: 15, y: 114.9, signals: [{ type: 'power', signal: 'VCC' }], number: 1 },
     { name: 'SDA', x: 24.5, y: 114.9, signals: [], number: 2 },
@@ -44,6 +51,19 @@ export class DHT22Element extends LitElement {
         >
           DHT22
         </text>
+        ${this.value
+          ? html`
+              <defs>
+                <filter id="dht22Glow" x="-1" y="-1" width="3" height="3">
+                  <feGaussianBlur stdDeviation="0.5" />
+                </filter>
+              </defs>
+              <g>
+                <circle cx="13.5" cy="2.2" r="1.1" fill="#5cff5c" filter="url(#dht22Glow)" opacity="0.85" />
+                <circle cx="13.5" cy="2.2" r="0.32" fill="#eaffea" />
+              </g>
+            `
+          : null}
       </svg>
     `;
   }
