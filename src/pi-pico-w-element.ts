@@ -130,7 +130,7 @@ export class PiPicoWElement extends LitElement {
       <svg
         width="${BOARD_WIDTH_MM}mm"
         height="${BOARD_HEIGHT_MM}mm"
-        viewBox="0 0 ${RAW_VIEWBOX_WIDTH} ${RAW_VIEWBOX_HEIGHT}"
+        viewBox="0 0 ${BOARD_WIDTH_MM} ${BOARD_HEIGHT_MM}"
         xmlns="http://www.w3.org/2000/svg"
       >
         <g transform="scale(${SVG_TO_MM_SCALE})">${unsafeSVG(boardArtwork)}</g>
