@@ -11,6 +11,8 @@ export { DHT22Element as Dht22Element } from './dht22-element';
 export { DipSwitch8Element } from './dip-switch-8-element';
 export { Ds1307Element } from './ds1307-element';
 export { ESP32DevkitV1Element } from './esp32-devkit-v1-element';
+export { ESP32DevkitCV4Element } from './esp32-devkit-c-v4-element';
+export { ESP32CamElement } from './esp32-cam-element';
 export { FlameSensorElement } from './flame-sensor-element';
 export { FranzininhoElement } from './franzininho-element';
 export { ArduinoLeonardoElement } from './arduino-leonardo-element';
