@@ -13,6 +13,7 @@ export { Ds1307Element } from './ds1307-element';
 export { ESP32DevkitV1Element } from './esp32-devkit-v1-element';
 export { FlameSensorElement } from './flame-sensor-element';
 export { FranzininhoElement } from './franzininho-element';
+export { ArduinoLeonardoElement } from './arduino-leonardo-element';
 export { GasSensorElement } from './gas-sensor-element';
 export { HCSR04Element } from './hc-sr04-element';
 export { HeartBeatSensorElement } from './heart-beat-sensor-element';
