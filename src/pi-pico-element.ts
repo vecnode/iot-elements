@@ -32,6 +32,25 @@ const BOARD_HEIGHT_MM = 52.75;
 // ratio, matching rounding in the original artwork's own units).
 const SVG_TO_MM_SCALE = BOARD_WIDTH_MM / 826.782;
 
+// board.svg's own root <svg> tag carries width="79" height="200" -
+// unrelated to (much smaller than) its own viewBox="0 0 826.782
+// 2086.626" (likely a leftover print/DPI-derived size from whatever
+// tool exported it upstream). Pasting the raw file wholesale via
+// unsafeSVG makes it a *nested* <svg>, and a nested <svg>'s explicit
+// width/height set its own viewport size directly - so the board
+// rendered at 79x200 (in the units *before* the SVG_TO_MM_SCALE
+// wrapper below even applies), not at its viewBox's actual 826.782x
+// 2086.626 extent, making the whole board tiny and badly proportioned
+// while every pin coordinate above (measured against the real
+// viewBox/mm layout from board.json) stayed correct - hence "SVG tiny,
+// pins in the right real-world spot" rather than everything scaling
+// together. Fix: strip the raw file's own <svg ...> wrapper tag
+// (open+close) before embedding, so only its path/circle content goes
+// into our own <g transform="scale(...)"> - the same "inline SVG
+// content, not a nested viewport" shape every other element in this
+// library already uses.
+const boardArtwork = rawBoardSvg.replace(/^\s*<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+
 @customElement('wokwi-pi-pico')
 export class PiPicoElement extends LitElement {
   // Real pin map, from board.json's own `pins` object - GP0-GP22/GP26-
@@ -99,7 +118,7 @@ export class PiPicoElement extends LitElement {
         viewBox="0 0 ${BOARD_WIDTH_MM} ${BOARD_HEIGHT_MM}"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g transform="scale(${SVG_TO_MM_SCALE})">${unsafeSVG(rawBoardSvg)}</g>
+        <g transform="scale(${SVG_TO_MM_SCALE})">${unsafeSVG(boardArtwork)}</g>
       </svg>
     `;
   }
