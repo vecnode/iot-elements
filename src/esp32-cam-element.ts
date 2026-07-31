@@ -8,9 +8,8 @@ import { ElementPin, GND, VCC, usart } from './pin';
 // vendoring posture as pi-pico-w-element.ts / esp32-devkit-c-v4-element.ts.
 // Same chip as esp32-devkit-v1-element.ts (ESP32-WROOM-32, Xtensa LX6);
 // the OV2640 camera and onboard microSD slot are physically present but
-// not emulated by this project's QEMU fork - same "present on the board,
-// not modeled" gap as the Pico W's WiFi chip (see esp32_qemu_adapter.hpp).
-// GPIO/LED pins work normally.
+// not emulated by esp32js - same "present on the board, not modeled" gap
+// as the Pico W's WiFi chip. GPIO/LED pins work normally.
 import rawBoardSvg from './assets/esp32-cam-board.svg?raw';
 
 const BOARD_WIDTH_MM = 27.2;
