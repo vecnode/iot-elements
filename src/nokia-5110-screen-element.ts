@@ -41,14 +41,27 @@ export class Nokia5110ScreenElement extends LitElement {
         viewBox="0 0 30 32"
         xmlns="http://www.w3.org/2000/svg"
       >
-        ${pcbBody(30, 30, 'NOKIA 5110', '#153a1a')}
+        ${pcbBody(30, 30, 'NOKIA 5110', '#153a6b')}
+        <!-- the black plastic bezel salvaged along with the LCD glass
+             itself - real modules keep it, it's not just a bare glass
+             rectangle soldered to the breakout. -->
         <rect
-          x="3"
-          y="3"
-          width="24"
-          height="14"
-          fill="#9fbf9f"
-          stroke="#0a1f0a"
+          x="2"
+          y="2"
+          width="26"
+          height="16"
+          rx="0.6"
+          fill="#111"
+          stroke="#000"
+          stroke-width="0.2"
+        />
+        <rect
+          x="4"
+          y="4"
+          width="22"
+          height="12"
+          fill="#8a9c8a"
+          stroke="#4a5a4a"
           stroke-width="0.2"
         />
         <g fill="#ccc">

@@ -15,9 +15,14 @@ export function pcbBody(
   height: number,
   title: string,
   color = '#1a6b3a',
+  // Silkscreen text color - the light default reads on every dark PCB
+  // color this fork otherwise uses, but a light-colored board (e.g. the
+  // Nucleo family's white silkscreen) needs a dark override instead.
+  textColor = '#e8f5ec',
+  strokeColor = '#0c3a1e',
 ): TemplateResult {
   return svg`
-    <rect x="0" y="0" width="${width}" height="${height}" rx="1" fill="${color}" stroke="#0c3a1e" stroke-width="0.2" />
+    <rect x="0" y="0" width="${width}" height="${height}" rx="1" fill="${color}" stroke="${strokeColor}" stroke-width="0.2" />
     <text
       x="${width / 2}"
       y="${height / 2}"
@@ -25,7 +30,7 @@ export function pcbBody(
       dominant-baseline="middle"
       font-size="1.6"
       font-family="sans-serif"
-      fill="#e8f5ec"
+      fill="${textColor}"
     >${title}</text>
   `;
 }

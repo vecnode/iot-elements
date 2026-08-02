@@ -42,6 +42,11 @@ export class A4988Element extends LitElement {
       >
         ${pcbBody(30, 20, 'A4988', '#2a2a3a')}
         <rect x="10" y="7" width="10" height="8" fill="#1a1a1a" stroke="#000" stroke-width="0.15" />
+        <!-- the small blue current-limiting trimpot mounted on the
+             driver chip itself - a real, easily-spotted landmark on
+             every one of these boards. -->
+        <circle cx="15" cy="10" r="1.3" fill="#1a5cb0" stroke="#0a2a5a" stroke-width="0.15" />
+        <line x1="15" y1="10" x2="15.9" y2="9.3" stroke="#0a2a5a" stroke-width="0.3" />
         <g fill="#ccc">
           ${CONTROL_PINS.map(
             (_, i) => svg`<rect x="${1.85 + i * 3}" y="18" width="0.3" height="2" />`,

@@ -29,7 +29,11 @@ export class NucleoC031C6Element extends LitElement {
         viewBox="-6 -1 ${NUCLEO32_WIDTH + 12} ${NUCLEO32_HEIGHT + 2}"
         xmlns="http://www.w3.org/2000/svg"
       >
-        ${pcbBody(NUCLEO32_WIDTH, NUCLEO32_HEIGHT, 'NUCLEO C031C6', '#0a3a6b')}
+        <!-- Real Nucleo boards are white/light-gray silkscreen with a
+             blue accent, not a solid dark-blue slab like a generic dev
+             board - a recognizable ST Nucleo trait worth keeping. -->
+        ${pcbBody(NUCLEO32_WIDTH, NUCLEO32_HEIGHT, 'NUCLEO C031C6', '#eef1f4', '#0a3a6b', '#0a3a6b')}
+        <rect x="0" y="0" width="${NUCLEO32_WIDTH}" height="2.2" fill="#0a3a6b" />
         <rect x="5" y="16" width="8" height="8" fill="#1a1a1a" stroke="#000" stroke-width="0.15" />
         ${nucleo32Pads().map((p) => p.pin)}
       </svg>
