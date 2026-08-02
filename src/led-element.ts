@@ -12,7 +12,7 @@ const lightColors: { [key: string]: string } = {
   purple: '#ff80ff',
 };
 
-@customElement('wokwi-led')
+@customElement('iot-led')
 export class LEDElement extends LitElement {
   @property() value = false;
   @property() brightness = 1.0;

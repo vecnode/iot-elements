@@ -3,7 +3,7 @@ import { customElement, property, query } from 'lit/decorators.js';
 import { analog, ElementPin, GND, VCC } from './pin';
 import { SPACE_KEYS } from './utils/keys';
 
-@customElement('wokwi-analog-joystick')
+@customElement('iot-analog-joystick')
 export class AnalogJoystickElement extends LitElement {
   @property({ type: Number }) xValue = 0;
   @property({ type: Number }) yValue = 0;

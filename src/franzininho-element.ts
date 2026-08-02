@@ -4,7 +4,7 @@ import { pinsFemalePattern } from './patterns/pins-female';
 import { analog, ElementPin, i2c, spi } from './pin';
 import { SPACE_KEYS } from './utils/keys';
 
-@customElement('wokwi-franzininho')
+@customElement('iot-franzininho')
 export class FranzininhoElement extends LitElement {
   @property() led1 = false;
   @property() ledPower = false;

@@ -3,7 +3,7 @@ import './led-ring-element';
 
 export default {
   title: 'LED Ring',
-  component: 'wokwi-led-ring',
+  component: 'iot-led-ring',
   argTypes: {
     animation: { control: 'boolean' },
     pixels: { control: { type: 'number', min: 1, max: 64, step: 1 } },
@@ -20,12 +20,12 @@ export default {
 };
 
 const Template = ({ animation, background, pixels, pixelSpacing }) =>
-  html`<wokwi-led-ring
+  html`<iot-led-ring
     .animation=${animation}
     background=${background}
     pixels=${pixels}
     pixelSpacing=${pixelSpacing}
-  ></wokwi-led-ring>`;
+  ></iot-led-ring>`;
 
 export const Ring8 = Template.bind({});
 Ring8.args = { pixels: 8 };

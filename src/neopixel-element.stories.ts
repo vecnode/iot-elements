@@ -10,7 +10,7 @@ interface NeopixelArgs {
 
 const meta = {
   title: 'Neopixel',
-  component: 'wokwi-neopixel',
+  component: 'iot-neopixel',
   args: {
     r: 0,
     g: 0,
@@ -28,7 +28,7 @@ const meta = {
       },
     },
   },
-  render: (args) => html` <wokwi-neopixel r=${args.r} g=${args.g} b=${args.b}></wokwi-neopixel> `,
+  render: (args) => html` <iot-neopixel r=${args.r} g=${args.g} b=${args.b}></iot-neopixel> `,
 } satisfies Meta<NeopixelArgs>;
 
 export default meta;

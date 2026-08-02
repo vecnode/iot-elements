@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('ESP32DevkitV1Element', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new ESP32DevkitV1Element());
-    await savePng('wokwi-esp32-devkit-v1', pngData);
+    await savePng('iot-esp32-devkit-v1', pngData);
   });
 });

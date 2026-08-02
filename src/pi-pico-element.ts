@@ -129,7 +129,7 @@ const PIN_TABLE_MM: MmPin[] = [
   { name: 'VBUS', x: 19.3, y: 3.4, signals: [VCC(5)] },
 ];
 
-@customElement('wokwi-pi-pico')
+@customElement('iot-pi-pico')
 export class PiPicoElement extends LitElement {
   readonly pinInfo: ElementPin[] = PIN_TABLE_MM.map((pin) => ({
     name: pin.name,

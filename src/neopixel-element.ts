@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin, GND, VCC } from './pin';
 
-@customElement('wokwi-neopixel')
+@customElement('iot-neopixel')
 export class NeoPixelElement extends LitElement {
   @property() r = 0;
   @property() g = 0;

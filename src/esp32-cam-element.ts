@@ -65,7 +65,7 @@ const PIN_TABLE_MM: MmPin[] = [
   { name: 'GND.3', x: 24.76, y: 22.73, signals: [GND()] },
 ];
 
-@customElement('wokwi-esp32-cam')
+@customElement('iot-esp32-cam')
 export class ESP32CamElement extends LitElement {
   readonly pinInfo: ElementPin[] = PIN_TABLE_MM.map((pin) => ({
     name: pin.name,

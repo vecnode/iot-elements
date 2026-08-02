@@ -3,7 +3,7 @@ import './gas-sensor-element';
 
 export default {
   title: 'Gas Sensor',
-  component: 'wokwi-gas-sensor',
+  component: 'iot-gas-sensor',
   argTypes: {
     ledPower: { control: { type: 'boolean' } },
     ledD0: { control: { type: 'boolean' } },
@@ -15,6 +15,6 @@ export default {
 };
 
 const Template = ({ ledPower, ledD0 }) =>
-  html` <wokwi-gas-sensor .ledPower=${ledPower} .ledD0=${ledD0}></wokwi-gas-sensor>`;
+  html` <iot-gas-sensor .ledPower=${ledPower} .ledD0=${ledD0}></iot-gas-sensor>`;
 
 export const Default = Template.bind({});

@@ -4,7 +4,7 @@ import { pinsFemalePattern } from './patterns/pins-female';
 import { analog, ElementPin, i2c, spi, usart } from './pin';
 import { SPACE_KEYS } from './utils/keys';
 
-@customElement('wokwi-arduino-uno')
+@customElement('iot-arduino-uno')
 export class ArduinoUnoElement extends LitElement {
   @property() led13 = false;
   @property() ledRX = false;

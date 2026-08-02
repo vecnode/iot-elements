@@ -3,11 +3,11 @@ import './hx711-element';
 
 export default {
   title: 'HX711',
-  component: 'wokwi-hx711',
+  component: 'iot-hx711',
 };
 
 const Template = ({ width, height, type = '50kg' }) =>
-  html`<wokwi-hx711 .type=${type} .width=${width} .height=${height}></wokwi-hx711>`;
+  html`<iot-hx711 .type=${type} .width=${width} .height=${height}></iot-hx711>`;
 
 export const LoadCell50kg = Template.bind({});
 LoadCell50kg.args = { type: '50kg', width: 580, height: 430 };

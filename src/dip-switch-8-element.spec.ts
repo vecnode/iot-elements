@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('DipSwitch8Element', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new DipSwitch8Element());
-    await savePng('wokwi-dip-switch-8', pngData);
+    await savePng('iot-dip-switch-8', pngData);
   });
 });

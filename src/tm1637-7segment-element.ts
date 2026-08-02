@@ -9,7 +9,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
  * not standard I2C, so pin.ts's `i2c()` signal type doesn't apply). Not
  * vendored - see 74hc165-element.ts's doc comment for why.
  */
-@customElement('wokwi-tm1637-7segment')
+@customElement('iot-tm1637-7segment')
 export class Tm1637SevenSegmentElement extends LitElement {
   /** Which of the 4 digits (plus the center colon) are lit - display-only, nothing drives it yet. */
   @property() text = '----';

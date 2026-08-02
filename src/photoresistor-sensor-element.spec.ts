@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('PhotoresistorSensorElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new PhotoresistorSensorElement());
-    await savePng('wokwi-photoresistor-sensor', pngData);
+    await savePng('iot-photoresistor-sensor', pngData);
   });
 });

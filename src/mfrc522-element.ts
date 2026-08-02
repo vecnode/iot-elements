@@ -11,7 +11,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
  */
 const PINS = ['SDA', 'SCK', 'MOSI', 'MISO', 'IRQ', 'GND', 'RST', 'VCC'];
 
-@customElement('wokwi-mfrc522')
+@customElement('iot-mfrc522')
 export class MFRC522Element extends LitElement {
   readonly pinInfo: ElementPin[] = PINS.map((name, i) => ({
     name,

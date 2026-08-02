@@ -8,7 +8,7 @@ interface ResistorArgs {
 
 const meta = {
   title: 'Resistor',
-  component: 'wokwi-resistor',
+  component: 'iot-resistor',
   args: {
     value: 1000,
   },
@@ -22,7 +22,7 @@ const meta = {
       },
     },
   },
-  render: (args) => html`<wokwi-resistor value="${args.value}"></wokwi-resistor>`,
+  render: (args) => html`<iot-resistor value="${args.value}"></iot-resistor>`,
 } satisfies Meta<ResistorArgs>;
 
 export default meta;

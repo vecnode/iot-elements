@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { GND, VCC } from './pin';
 
-@customElement('wokwi-small-sound-sensor')
+@customElement('iot-small-sound-sensor')
 export class SmallSoundSensorElement extends LitElement {
   @property() ledPower = false;
   @property() ledSignal = false;

@@ -3,7 +3,7 @@ import { customElement, property, query } from 'lit/decorators.js';
 import { analog, ElementPin, i2c, spi, usart } from './pin';
 import { SPACE_KEYS } from './utils/keys';
 
-@customElement('wokwi-arduino-nano')
+@customElement('iot-arduino-nano')
 export class ArduinoNanoElement extends LitElement {
   @property() led13 = false;
   @property() ledRX = false;

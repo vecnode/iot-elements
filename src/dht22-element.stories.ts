@@ -4,7 +4,7 @@ import './dht22-element';
 
 const meta: Meta = {
   title: 'DHT22',
-  component: 'wokwi-dht22',
+  component: 'iot-dht22',
   parameters: {
     docs: {
       description: {
@@ -18,5 +18,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => html`<wokwi-dht22></wokwi-dht22>`,
+  render: () => html`<iot-dht22></iot-dht22>`,
 };

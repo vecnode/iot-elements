@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin, GND, VCC } from './pin';
 
-@customElement('wokwi-pir-motion-sensor')
+@customElement('iot-pir-motion-sensor')
 export class PIRMotionSensorElement extends LitElement {
   // Motion-detected indicator - same property name/shape as LEDElement's
   // own `value`, so this can be driven by the exact same generic "read"

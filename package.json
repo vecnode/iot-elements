@@ -1,11 +1,11 @@
 {
-  "name": "@wokwi/elements",
+  "name": "iot-elements",
   "version": "1.9.2",
   "main": "dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
-  "repository": "https://github.com/wokwi/wokwi-elements",
-  "author": "Uri Shaked <uri@urishaked.com>",
+  "repository": "https://github.com/vecnode/iot-elements",
+  "author": "vecnode (originally forked from Uri Shaked's wokwi-elements)",
   "license": "MIT",
   "files": [
     "dist"
@@ -48,7 +48,7 @@
     "lit": "^3.0.0"
   },
   "scripts": {
-    "build": "rimraf dist && tsc --sourceMap false && tsc -m esnext --outDir dist/esm --sourceMap false && rollup -c rollup.config.mjs && terser -c -m -o dist/wokwi-elements.bundle.min.js dist/wokwi-elements.bundle.js",
+    "build": "rimraf dist && tsc --sourceMap false && tsc -m esnext --outDir dist/esm --sourceMap false && rollup -c rollup.config.mjs && terser -c -m -o dist/iot-elements.bundle.min.js dist/iot-elements.bundle.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint src/**/*.ts",

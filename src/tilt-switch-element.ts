@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { GND, VCC } from './pin';
 
-@customElement('wokwi-tilt-switch')
+@customElement('iot-tilt-switch')
 export class TiltSwitchElement extends LitElement {
   // Closed-circuit indicator - same property name/shape as LEDElement's
   // own `value`, so this can be driven by the exact same generic "read"

@@ -11,7 +11,7 @@ interface NeopixelMatrixArgs {
 
 const meta = {
   title: 'NeoPixel Matrix',
-  component: 'wokwi-neopixel-matrix',
+  component: 'iot-neopixel-matrix',
   args: {
     rows: 8,
     cols: 8,
@@ -33,12 +33,12 @@ const meta = {
   },
   render: (args: NeopixelMatrixArgs) => html`
     <div style="display: inline-block; background: #363; padding: 4px">
-      <wokwi-neopixel-matrix
+      <iot-neopixel-matrix
         rows=${args.rows}
         cols=${args.cols}
         .blurLight=${args.blurLight}
         .animation=${args.animation}
-      ></wokwi-neopixel-matrix>
+      ></iot-neopixel-matrix>
     </div>
   `,
 } satisfies Meta<NeopixelMatrixArgs>;

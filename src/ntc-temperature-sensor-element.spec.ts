@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('NTCTemperatureSensorElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new NTCTemperatureSensorElement());
-    await savePng('wokwi-ntc-temperature-sensor', pngData);
+    await savePng('iot-ntc-temperature-sensor', pngData);
   });
 });

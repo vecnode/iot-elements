@@ -3,7 +3,7 @@ import './nano-rp2040-connect-element';
 
 export default {
   title: 'Nano RP2040 Connect',
-  component: 'wokwi-nano-rp2040-connect',
+  component: 'iot-nano-rp2040-connect',
   argTypes: {
     ledPower: { control: { type: 'boolean' } },
     ledBuiltIn: { control: { type: 'boolean' } },
@@ -21,12 +21,12 @@ export default {
 };
 
 const Template = ({ ledPower, ledBuiltIn, ledRed, ledGreen, ledBlue }) =>
-  html` <wokwi-nano-rp2040-connect
+  html` <iot-nano-rp2040-connect
     .ledPower=${ledPower}
     .ledBuiltIn=${ledBuiltIn}
     .ledRed=${ledRed}
     .ledGreen=${ledGreen}
     .ledBlue=${ledBlue}
-  ></wokwi-nano-rp2040-connect>`;
+  ></iot-nano-rp2040-connect>`;
 
 export const Default = Template.bind({});

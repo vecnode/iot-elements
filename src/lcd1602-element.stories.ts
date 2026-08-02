@@ -21,7 +21,7 @@ interface LCD1602Args {
 
 const meta: Meta<LCD1602Args> = {
   title: 'LCD1602',
-  component: 'wokwi-lcd1602',
+  component: 'iot-lcd1602',
   args: {
     text: '',
     cursorX: 0,
@@ -47,7 +47,7 @@ export default meta;
 type Story = StoryObj<LCD1602Args>;
 
 const Template = (args: LCD1602Args) => html`
-  <wokwi-lcd1602
+  <iot-lcd1602
     .text=${args.text}
     .cursor=${args.cursor}
     .blink=${args.blink}
@@ -58,7 +58,7 @@ const Template = (args: LCD1602Args) => html`
     .background=${args.background}
     .pins=${args.pins}
     .screenOnly=${args.screenOnly}
-  ></wokwi-lcd1602>
+  ></iot-lcd1602>
 `;
 
 export const HelloWorld: Story = Template.bind({});
@@ -107,7 +107,7 @@ DisplayOffBlue.args = {
 
 export const FontA02: Story = {
   name: 'Font A02',
-  render: () => html`<wokwi-lcd1602 .text=${symbols} .font=${fontA02}></wokwi-lcd1602>`,
+  render: () => html`<iot-lcd1602 .text=${symbols} .font=${fontA02}></iot-lcd1602>`,
 };
 
 export const I2CPins: Story = Template.bind({});

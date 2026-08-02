@@ -7,7 +7,7 @@ import { ElementPin } from './pin';
  * leads, no pins (`pinInfo` is empty, same convention wifi-ap-element.ts
  * uses). Not vendored - see 74hc165-element.ts's doc comment for why.
  */
-@customElement('wokwi-text')
+@customElement('iot-text')
 export class TextElement extends LitElement {
   @property() text = 'Text';
   @property() color = '#e8e8e8';

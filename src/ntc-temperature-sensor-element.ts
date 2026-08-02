@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { analog, ElementPin, GND, VCC } from './pin';
 
-@customElement('wokwi-ntc-temperature-sensor')
+@customElement('iot-ntc-temperature-sensor')
 export class NTCTemperatureSensorElement extends LitElement {
   // Threshold-active indicator - same property name/shape as LEDElement's
   // own `value`, so this can be driven by physicalsim's existing generic

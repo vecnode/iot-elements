@@ -56,7 +56,7 @@ const RIGHT = [
 const WIDTH = 23;
 const HEIGHT = 52;
 
-@customElement('wokwi-stm32-bluepill')
+@customElement('iot-stm32-bluepill')
 export class Stm32BluepillElement extends LitElement {
   readonly pinInfo: ElementPin[] = [
     ...edgeHeaderRow(LEFT, 'left', 1.3, 0, 2.54),

@@ -11,7 +11,7 @@ function isNumeric(text: string) {
   return !isNaN(parseFloat(text));
 }
 
-@customElement('wokwi-membrane-keypad')
+@customElement('iot-membrane-keypad')
 export class MembraneKeypadElement extends LitElement {
   /**
    * Number of columns (3 or 4)

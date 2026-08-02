@@ -98,7 +98,7 @@ const PIN_TABLE_MM: MmPin[] = [
   { name: 'CLK', x: 26.66, y: 53.34, signals: [] },
 ];
 
-@customElement('wokwi-esp32-devkit-c-v4')
+@customElement('iot-esp32-devkit-c-v4')
 export class ESP32DevkitCV4Element extends LitElement {
   readonly pinInfo: ElementPin[] = PIN_TABLE_MM.map((pin) => ({
     name: pin.name,

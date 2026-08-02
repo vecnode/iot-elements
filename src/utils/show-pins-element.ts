@@ -16,16 +16,16 @@ export interface ElementWithPinInfo extends Element {
  *    ```
  *    import './utils/show-pins-element';
  *    ```
- * 2. Wrap your element with the <wokwi-show-pins> element, e.g.
+ * 2. Wrap your element with the <iot-show-pins> element, e.g.
  *    ```
  *    export const HCSR04 = () => html`
- *      <wokwi-show-pins>
- *        <wokwi-hc-sr04></wokwi-hc-sr04>
- *      </wokwi-show-pins>
+ *      <iot-show-pins>
+ *        <iot-hc-sr04></iot-hc-sr04>
+ *      </iot-show-pins>
  *    `;
  *    ```
  */
-@customElement('wokwi-show-pins')
+@customElement('iot-show-pins')
 export class ShowPinsElement extends LitElement {
   @property() pinColor = 'red';
   @query('#content') elementSlot!: HTMLSlotElement;

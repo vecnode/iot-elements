@@ -3,7 +3,7 @@ import './flame-sensor-element';
 
 export default {
   title: 'Flame Sensor',
-  component: 'wokwi-flame-sensor',
+  component: 'iot-flame-sensor',
   argTypes: {
     ledPower: { control: { type: 'boolean' } },
     ledSignal: { control: { type: 'boolean' } },
@@ -15,6 +15,6 @@ export default {
 };
 
 const Template = ({ ledPower, ledSignal }) =>
-  html` <wokwi-flame-sensor .ledPower=${ledPower} .ledSignal=${ledSignal}></wokwi-flame-sensor>`;
+  html` <iot-flame-sensor .ledPower=${ledPower} .ledSignal=${ledSignal}></iot-flame-sensor>`;
 
 export const Default = Template.bind({});

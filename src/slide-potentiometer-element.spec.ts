@@ -8,6 +8,6 @@ describe('SlidePotentiometerElement', () => {
       new SlidePotentiometerElement(),
       SlidePotentiometerElement.styles,
     );
-    await savePng('wokwi-slide-potentiometer', pngData);
+    await savePng('iot-slide-potentiometer', pngData);
   });
 });

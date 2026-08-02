@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('MembraneKeypadElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new MembraneKeypadElement(), MembraneKeypadElement.styles);
-    await savePng('wokwi-membrane-keypad', pngData);
+    await savePng('iot-membrane-keypad', pngData);
   });
 });

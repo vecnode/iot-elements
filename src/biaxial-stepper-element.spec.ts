@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('BiaxialStepperElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new BiaxialStepperElement());
-    await savePng('wokwi-biaxial-stepper', pngData);
+    await savePng('iot-biaxial-stepper', pngData);
   });
 });

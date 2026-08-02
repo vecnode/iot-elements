@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin, spi } from './pin';
 
-@customElement('wokwi-ili9341')
+@customElement('iot-ili9341')
 export class ILI9341Element extends LitElement {
   readonly screenWidth = 240;
   readonly screenHeight = 320;

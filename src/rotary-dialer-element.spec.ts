@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('RotaryDialerElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new RotaryDialerElement(), RotaryDialerElement.styles);
-    await savePng('wokwi-rotary-dialer', pngData);
+    await savePng('iot-rotary-dialer', pngData);
   });
 });

@@ -3,7 +3,7 @@ import './esp32-devkit-v1-element';
 
 export default {
   title: 'ESP32 Devkit V1',
-  component: 'wokwi-esp32-devkit-v1',
+  component: 'iot-esp32-devkit-v1',
   argTypes: {
     led1: { control: { type: 'boolean' } },
     ledPower: { control: { type: 'boolean' } },
@@ -15,7 +15,7 @@ export default {
 };
 
 const Template = ({ led1, ledPower }) =>
-  html`<wokwi-esp32-devkit-v1 .led1=${led1} .ledPower=${ledPower}></wokwi-esp32-devkit-v1>`;
+  html`<iot-esp32-devkit-v1 .led1=${led1} .ledPower=${ledPower}></iot-esp32-devkit-v1>`;
 
 export const Default = Template.bind({});
 

@@ -12,7 +12,7 @@ export interface ArduinoNanoArgs {
 
 const meta: Meta = {
   title: 'Arduino Nano',
-  component: 'wokwi-arduino-nano',
+  component: 'iot-arduino-nano',
   args: {
     led13: false,
     ledTX: false,
@@ -45,13 +45,13 @@ export const Nano: Story = {
     ledPower: true,
   },
   render: (args) => html`
-    <wokwi-arduino-nano
+    <iot-arduino-nano
       .led13=${args.led13}
       .ledTX=${args.ledTX}
       .ledRX=${args.ledRX}
       .ledPower=${args.ledPower}
       @button-press=${action('button-press')}
       @button-release=${action('button-release')}
-    ></wokwi-arduino-nano>
+    ></iot-arduino-nano>
   `,
 };

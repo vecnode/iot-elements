@@ -5,7 +5,7 @@ import commonJS from '@rollup/plugin-commonjs';
 export default {
   input: 'dist/esm/index.js',
   output: {
-    file: 'dist/wokwi-elements.bundle.js',
+    file: 'dist/iot-elements.bundle.js',
     name: 'elements',
     format: 'iife',
   },

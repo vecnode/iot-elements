@@ -5,7 +5,7 @@ import { clamp } from './utils/clamp';
 import { getScreenCTM } from './utils/ctm-workaround';
 import { mmToPix } from './utils/units';
 
-@customElement('wokwi-slide-potentiometer')
+@customElement('iot-slide-potentiometer')
 export class SlidePotentiometerElement extends LitElement {
   @property({ type: Number }) travelLength = 30;
   @property({ type: Number }) value = 0;

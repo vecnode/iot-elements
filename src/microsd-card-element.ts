@@ -3,7 +3,7 @@ import { customElement } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { spi } from './pin';
 
-@customElement('wokwi-microsd-card')
+@customElement('iot-microsd-card')
 export class MicrosdCardElement extends LitElement {
   readonly pinInfo: ElementPin[] = [
     { name: 'CD', x: 76.734, y: 9.3744, signals: [] },

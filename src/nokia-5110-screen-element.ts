@@ -11,7 +11,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
  */
 const PINS = ['RST', 'CE', 'DC', 'DIN', 'CLK', 'VCC', 'BL', 'GND'];
 
-@customElement('wokwi-nokia-5110-screen')
+@customElement('iot-nokia-5110-screen')
 export class Nokia5110ScreenElement extends LitElement {
   readonly pinInfo: ElementPin[] = PINS.map((name, i) => ({
     name,

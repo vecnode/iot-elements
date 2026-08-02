@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('NeopixelMatrixElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new NeopixelMatrixElement(), NeopixelMatrixElement.styles);
-    await savePng('wokwi-neopixel-matrix', pngData);
+    await savePng('iot-neopixel-matrix', pngData);
   });
 });

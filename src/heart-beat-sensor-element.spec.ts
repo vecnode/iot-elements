@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('HeartBeatSensorElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new HeartBeatSensorElement());
-    await savePng('wokwi-heart-beat-sensor', pngData);
+    await savePng('iot-heart-beat-sensor', pngData);
   });
 });

@@ -32,7 +32,7 @@ const PIN_NAMES = [
   'VCC',
 ];
 
-@customElement('wokwi-74hc165')
+@customElement('iot-74hc165')
 export class HC165Element extends LitElement {
   readonly pinInfo: ElementPin[] = dipPinPositions(8).map((p, i) => ({
     name: PIN_NAMES[i],

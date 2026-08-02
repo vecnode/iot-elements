@@ -10,7 +10,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
  * comment for why. Visual/wireable only; `frequency` is a label, not a
  * simulated signal yet.
  */
-@customElement('wokwi-clock-generator')
+@customElement('iot-clock-generator')
 export class ClockGeneratorElement extends LitElement {
   /** Output frequency label, e.g. "1000" (Hz) - not simulated yet. */
   @property() frequency = '1000';

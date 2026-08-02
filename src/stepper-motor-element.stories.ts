@@ -3,7 +3,7 @@ import './stepper-motor-element';
 
 export default {
   title: 'Stepper Motor',
-  component: 'wokwi-stepper-motor',
+  component: 'iot-stepper-motor',
   argTypes: {
     angle: { control: { type: 'range', min: 0, max: 360 } },
     size: { control: { type: 'select', options: [8, 11, 14, 17, 23, 34] } },
@@ -19,13 +19,13 @@ export default {
 };
 
 const Template = ({ angle, arrow, units, value, size }) =>
-  html`<wokwi-stepper-motor
+  html`<iot-stepper-motor
     .angle=${angle}
     .arrow=${arrow}
     .units=${units}
     .value=${value}
     .size=${size}
-  ></wokwi-stepper-motor>`;
+  ></iot-stepper-motor>`;
 
 export const Default = Template.bind({});
 Default.args = {};

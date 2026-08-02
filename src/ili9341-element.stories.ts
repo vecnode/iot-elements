@@ -4,7 +4,7 @@ import './ili9341-element';
 
 export default {
   title: 'ILI9341',
-  component: 'wokwi-ili9341',
+  component: 'iot-ili9341',
   argTypes: {
     flipHorizontal: { control: { type: 'boolean' } },
     flipVertical: { control: { type: 'boolean' } },
@@ -29,12 +29,12 @@ function drawLogo(canvas: HTMLCanvasElement) {
   }, 1000);
 }
 
-export const Default = () => html`<wokwi-ili9341></wokwi-ili9341> `;
+export const Default = () => html`<iot-ili9341></iot-ili9341> `;
 
 export const Logo = ({ flipHorizontal, flipVertical }) => html`
-  <wokwi-ili9341
+  <iot-ili9341
     @canvas-ready=${(e) => drawLogo(e.target.canvas)}
     .flipHorizontal=${flipHorizontal}
     .flipVertical=${flipVertical}
-  ></wokwi-ili9341>
+  ></iot-ili9341>
 `;

@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin, GND, VCC } from './pin';
 
-@customElement('wokwi-heart-beat-sensor')
+@customElement('iot-heart-beat-sensor')
 export class HeartBeatSensorElement extends LitElement {
   // Pulse-detected indicator - same property name/shape as LEDElement's
   // own `value`, so this can be driven by physicalsim's existing generic

@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('LEDRingElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new LEDRingElement());
-    await savePng('wokwi-led-ring', pngData);
+    await savePng('iot-led-ring', pngData);
   });
 });

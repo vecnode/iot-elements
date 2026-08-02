@@ -8,7 +8,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
  * connector (GND, VCC, SDA, SCL - Grove's own standard pin order). Not
  * vendored - see 74hc165-element.ts's doc comment for why.
  */
-@customElement('wokwi-grove-oled-sh1107')
+@customElement('iot-grove-oled-sh1107')
 export class GroveOledSh1107Element extends LitElement {
   readonly pinInfo: ElementPin[] = [
     { name: 'GND', x: 2, y: 22, number: 1, signals: [GND()] },

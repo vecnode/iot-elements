@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('MicrosdCardElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new MicrosdCardElement());
-    await savePng('wokwi-microsd-card', pngData);
+    await savePng('iot-microsd-card', pngData);
   });
 });

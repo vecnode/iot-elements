@@ -10,7 +10,7 @@ interface Pushbutton6mmArgs {
 
 const meta = {
   title: 'Pushbutton 6mm',
-  component: 'wokwi-pushbutton-6mm',
+  component: 'iot-pushbutton-6mm',
   args: {
     color: 'red',
     label: '',
@@ -23,12 +23,12 @@ const meta = {
     label: { control: 'text' },
   },
   render: (args: Pushbutton6mmArgs) => html`
-    <wokwi-pushbutton-6mm
+    <iot-pushbutton-6mm
       color=${args.color}
       label=${args.label}
       @button-press=${action('button-press')}
       @button-release=${action('button-release')}
-    ></wokwi-pushbutton-6mm>
+    ></iot-pushbutton-6mm>
   `,
 };
 
@@ -63,25 +63,25 @@ export const RedWithLongLabel: Story = {
 
 export const FourButtons: Story = {
   render: () => html`
-    <wokwi-pushbutton-6mm
+    <iot-pushbutton-6mm
       color="red"
       @button-press=${action('red button-press')}
       @button-release=${action('red button-release')}
-    ></wokwi-pushbutton-6mm>
-    <wokwi-pushbutton-6mm
+    ></iot-pushbutton-6mm>
+    <iot-pushbutton-6mm
       color="green"
       @button-press=${action('green button-press')}
       @button-release=${action('green button-release')}
-    ></wokwi-pushbutton-6mm>
-    <wokwi-pushbutton-6mm
+    ></iot-pushbutton-6mm>
+    <iot-pushbutton-6mm
       color="blue"
       @button-press=${action('blue button-press')}
       @button-release=${action('blue button-release')}
-    ></wokwi-pushbutton-6mm>
-    <wokwi-pushbutton-6mm
+    ></iot-pushbutton-6mm>
+    <iot-pushbutton-6mm
       color="white"
       @button-press=${action('white button-press')}
       @button-release=${action('white button-release')}
-    ></wokwi-pushbutton-6mm>
+    ></iot-pushbutton-6mm>
   `,
 };

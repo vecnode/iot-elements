@@ -4,7 +4,7 @@ import { pinsFemalePattern } from './patterns/pins-female';
 import { analog, ElementPin, i2c, spi, usart } from './pin';
 import { SPACE_KEYS } from './utils/keys';
 
-@customElement('wokwi-arduino-mega')
+@customElement('iot-arduino-mega')
 export class ArduinoMegaElement extends LitElement {
   @property() led13 = false;
   @property() ledRX = false;

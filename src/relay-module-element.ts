@@ -10,7 +10,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
  * relay component itself, not the driver PCB it's normally mounted on.
  * Not vendored - see 74hc165-element.ts's doc comment for why.
  */
-@customElement('wokwi-relay-module')
+@customElement('iot-relay-module')
 export class RelayModuleElement extends LitElement {
   readonly pinInfo: ElementPin[] = [
     { name: 'VCC', x: 2, y: 20, number: 1, signals: [VCC(5)] },

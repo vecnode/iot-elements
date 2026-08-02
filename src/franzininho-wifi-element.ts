@@ -16,7 +16,7 @@ const RIGHT = ['D0', 'D1', 'D2', 'D3', 'D4'];
 const WIDTH = 16;
 const HEIGHT = 28;
 
-@customElement('wokwi-franzininho-wifi')
+@customElement('iot-franzininho-wifi')
 export class FranzininhoWifiElement extends LitElement {
   readonly pinInfo: ElementPin[] = [
     ...edgeHeaderRow(LEFT, 'left', 3, 0, 4.4),

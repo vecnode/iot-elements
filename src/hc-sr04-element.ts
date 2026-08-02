@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from './pin';
 
-@customElement('wokwi-hc-sr04')
+@customElement('iot-hc-sr04')
 export class HCSR04Element extends LitElement {
   // Echo/triggered indicator - same property name/shape as LEDElement's
   // own `value`, so this can be driven by physicalsim's existing generic

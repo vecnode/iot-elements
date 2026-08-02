@@ -26,6 +26,6 @@ describe('SSD1306Element', () => {
     global.ImageData = MockImageData as typeof ImageData;
 
     const pngData = await renderToPng(new SSD1306Element(), SSD1306Element.styles);
-    await savePng('wokwi-ssd1306', pngData);
+    await savePng('iot-ssd1306', pngData);
   });
 });

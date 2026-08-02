@@ -8,7 +8,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
  * Not vendored - see 74hc165-element.ts's doc comment for why. 4-pin
  * I2C breakout, the standard layout these small modules ship with.
  */
-@customElement('wokwi-bmp180')
+@customElement('iot-bmp180')
 export class BMP180Element extends LitElement {
   readonly pinInfo: ElementPin[] = [
     { name: 'VCC', x: 2, y: 12, number: 1, signals: [VCC(3.3)] },

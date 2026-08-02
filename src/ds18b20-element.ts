@@ -9,7 +9,7 @@ import { ElementPin, GND, VCC } from './pin';
  * why. Pin order (flat face toward viewer, left to right) is the real
  * datasheet order: GND, DQ (data), VDD.
  */
-@customElement('wokwi-ds18b20')
+@customElement('iot-ds18b20')
 export class DS18B20Element extends LitElement {
   readonly pinInfo: ElementPin[] = [
     { name: 'GND', x: 1.27, y: 14, number: 1, signals: [GND()] },

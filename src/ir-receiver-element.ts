@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin, GND, VCC } from './pin';
 
-@customElement('wokwi-ir-receiver')
+@customElement('iot-ir-receiver')
 export class IRReceiverElement extends LitElement {
   // Signal-received indicator - same property name/shape as LEDElement's
   // own `value`, so this can be driven by physicalsim's existing generic
