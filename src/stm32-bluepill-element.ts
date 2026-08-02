@@ -85,16 +85,16 @@ export class Stm32BluepillElement extends LitElement {
         viewBox="-6 -2 ${WIDTH + 12} ${HEIGHT + 3}"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <!-- Real Blue Pill boards are a distinctly saturated, brighter
-             blue than a generic "dark PCB" navy - #1959c9 reads closer
-             to that at a glance than the fork's original #0a3a6b. Body
-             decorations passed as the extra param so they draw under
-             the silkscreened title instead of covering it. -->
+        <!-- Real Blue Pill boards are a distinctly saturated teal-blue,
+             closer to #015d89 than a generic "dark PCB" navy or the
+             fork's earlier #1959c9/#0a3a6b guesses. Body decorations
+             passed as the extra param so they draw under the
+             silkscreened title instead of covering it. -->
         ${pcbBody(
           WIDTH,
           HEIGHT,
           'STM32F103C8T6',
-          '#1959c9',
+          '#015d89',
           undefined,
           undefined,
           svg`
@@ -110,7 +110,9 @@ export class Stm32BluepillElement extends LitElement {
               stroke="#7a7a7a"
               stroke-width="0.15"
             />
-            <!-- the black 48-pin LQFP STM32F103C8T6 itself, centered. -->
+            <!-- the black 48-pin LQFP STM32F103C8T6 itself, centered,
+                 with a small pin-1 dot at its top-left corner (a real,
+                 easily-spotted orientation marker every QFP package has). -->
             <rect
               x="${WIDTH / 2 - 5}"
               y="18"
@@ -120,6 +122,7 @@ export class Stm32BluepillElement extends LitElement {
               stroke="#000"
               stroke-width="0.15"
             />
+            <circle cx="${WIDTH / 2 - 4.3}" cy="18.7" r="0.35" fill="#555" />
             <!-- small reset tact button next to the USB connector, and the
                  power LED next to it - both real, easily-spotted landmarks
                  on the board. -->

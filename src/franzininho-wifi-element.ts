@@ -38,14 +38,21 @@ export class FranzininhoWifiElement extends LitElement {
         viewBox="-5 0 ${WIDTH + 10} ${HEIGHT}"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <!-- Real Franzininho WiFi boards are a brighter, more saturated
+             green (#2c8240) than the fork's earlier #0e5c2f guess, and
+             the ESP32-S2 WROOM module is a light-grey shielded can with
+             a small antenna cutout on one corner, not a flat grey slab. -->
         ${pcbBody(
           WIDTH,
           HEIGHT,
           'FRANZININHO WiFi',
-          '#0e5c2f',
+          '#2c8240',
           undefined,
           undefined,
-          svg`<rect x="3" y="4" width="10" height="8" fill="#888" stroke="#555" stroke-width="0.15" />`,
+          svg`
+            <rect x="3" y="4" width="10" height="8" fill="#c9c9c9" stroke="#8a8a8a" stroke-width="0.15" />
+            <rect x="4" y="5" width="8" height="4.4" fill="#ababab" />
+          `,
         )}
         ${[
           ...edgeHeaderRow(LEFT, 'left', 3, 0, 4.4),
