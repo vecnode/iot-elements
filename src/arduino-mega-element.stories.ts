@@ -12,7 +12,7 @@ interface ArduinoMegaArgs {
 
 const meta: Meta = {
   title: 'Arduino Mega',
-  component: 'wokwi-arduino-mega',
+  component: 'iot-arduino-mega',
   args: {
     led13: false,
     ledTX: false,
@@ -39,13 +39,13 @@ type Story = StoryObj<ArduinoMegaArgs>;
 
 export const Mega: Story = {
   render: (args) => html`
-    <wokwi-arduino-mega
+    <iot-arduino-mega
       .led13=${args.led13}
       .ledTX=${args.ledTX}
       .ledRX=${args.ledRX}
       .ledPower=${args.ledPower}
       @button-press=${action('button-press')}
       @button-release=${action('button-release')}
-    ></wokwi-arduino-mega>
+    ></iot-arduino-mega>
   `,
 };

@@ -4,13 +4,13 @@ import './rotary-dialer-element';
 
 export default {
   title: 'Rotary Dialer',
-  component: 'wokwi-rotary-dialer',
+  component: 'iot-rotary-dialer',
 };
 
 export const Default = () => html`
-  <wokwi-rotary-dialer
+  <iot-rotary-dialer
     @dial=${action('dial')}
     @dial-start=${action('dial-start')}
     @dial-end=${action('dial-end')}
-  ></wokwi-rotary-dialer>
+  ></iot-rotary-dialer>
 `;

@@ -15,7 +15,7 @@ import { dipBody, dipPinPositions, dipSvgSize, dipViewBox } from './utils/dip-ch
  */
 const PIN_NAMES = ['PB5', 'PB3', 'PB4', 'GND', 'PB0', 'PB1', 'PB2', 'VCC'];
 
-@customElement('wokwi-attiny85')
+@customElement('iot-attiny85')
 export class ATtiny85Element extends LitElement {
   readonly pinInfo: ElementPin[] = dipPinPositions(4).map((p, i) => ({
     name: PIN_NAMES[i],

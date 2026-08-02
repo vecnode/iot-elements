@@ -14,7 +14,7 @@ import { ElementPin } from './pin';
  * electrolytic capacitor) - a polarized variant is future scope, not
  * modeled here.
  */
-@customElement('wokwi-capacitor')
+@customElement('iot-capacitor')
 export class CapacitorElement extends LitElement {
   /**
    * Capacitance value, in farads - accepts a plain number or an SI-suffixed

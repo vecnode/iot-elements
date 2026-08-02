@@ -4,7 +4,7 @@ import './franzininho-element';
 
 export default {
   title: 'Franzininho',
-  component: 'wokwi-franzininho',
+  component: 'iot-franzininho',
   argTypes: {
     ledPower: { control: { type: 'boolean' } },
     led1: { control: { type: 'boolean' } },
@@ -16,12 +16,12 @@ export default {
 };
 
 const Template = ({ ledPower, led1 }) =>
-  html`<wokwi-franzininho
+  html`<iot-franzininho
     .ledPower=${ledPower}
     .led1=${led1}
     @button-press=${action('button-press')}
     @button-release=${action('button-release')}
   >
-  </wokwi-franzininho>`;
+  </iot-franzininho>`;
 
 export const Default = Template.bind({});

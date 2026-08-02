@@ -13,7 +13,7 @@ import {
  * nucleo-c031c6-element.ts's own doc comment (identical in every way
  * except the silkscreened chip name, same as the real boards).
  */
-@customElement('wokwi-nucleo-l031k6')
+@customElement('iot-nucleo-l031k6')
 export class NucleoL031K6Element extends LitElement {
   readonly pinInfo = nucleo32Pins();
 

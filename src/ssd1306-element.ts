@@ -4,7 +4,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin, i2c } from './pin';
 
 type CanvasContext = CanvasRenderingContext2D | null | undefined;
-@customElement('wokwi-ssd1306')
+@customElement('iot-ssd1306')
 export class SSD1306Element extends LitElement {
   /**
    * The pixel data to draw on the element's internal &lt;canvas&gt;.

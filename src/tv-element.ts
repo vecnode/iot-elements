@@ -11,7 +11,7 @@ import { headerPin } from './utils/pcb-board';
  * VCC is only there because these are usually small powered composite
  * monitors, not because the signal itself needs it.
  */
-@customElement('wokwi-tv')
+@customElement('iot-tv')
 export class TvElement extends LitElement {
   @property() label = 'TV';
 

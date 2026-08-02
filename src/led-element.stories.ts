@@ -3,7 +3,7 @@ import './led-element';
 
 export default {
   title: 'LED',
-  component: 'wokwi-led',
+  component: 'iot-led',
   argTypes: {
     value: { control: 'boolean' },
     brightness: { control: { type: 'range', min: 0, max: 1.0, step: 0.05 } },
@@ -20,14 +20,14 @@ export default {
 };
 
 const Template = ({ color, flip, label, lightColor, value, brightness }) =>
-  html`<wokwi-led
+  html`<iot-led
     color=${color}
     .flip=${flip}
     .brightness=${brightness}
     label=${label}
     lightColor=${lightColor}
     .value=${value}
-  ></wokwi-led>`;
+  ></iot-led>`;
 
 export const Red = Template.bind({});
 Red.args = { color: 'red' };
@@ -54,11 +54,11 @@ export const White = Template.bind({});
 White.args = { color: 'white' };
 
 export const BrightnessLevels = () => html`
-  <wokwi-led color="red" label="0" .value=${true} brightness="0"></wokwi-led>
-  <wokwi-led color="red" label="1%" .value=${true} brightness="0.01"></wokwi-led>
-  <wokwi-led color="red" label="10%" .value=${true} brightness="0.1"></wokwi-led>
-  <wokwi-led color="red" label="25%" .value=${true} brightness="0.25"></wokwi-led>
-  <wokwi-led color="red" label="50%" .value=${true} brightness="0.5"></wokwi-led>
-  <wokwi-led color="red" label="75%" .value=${true} brightness="0.75"></wokwi-led>
-  <wokwi-led color="red" label="100%" .value=${true}></wokwi-led>
+  <iot-led color="red" label="0" .value=${true} brightness="0"></iot-led>
+  <iot-led color="red" label="1%" .value=${true} brightness="0.01"></iot-led>
+  <iot-led color="red" label="10%" .value=${true} brightness="0.1"></iot-led>
+  <iot-led color="red" label="25%" .value=${true} brightness="0.25"></iot-led>
+  <iot-led color="red" label="50%" .value=${true} brightness="0.5"></iot-led>
+  <iot-led color="red" label="75%" .value=${true} brightness="0.75"></iot-led>
+  <iot-led color="red" label="100%" .value=${true}></iot-led>
 `;

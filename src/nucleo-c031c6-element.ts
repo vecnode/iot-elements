@@ -16,7 +16,7 @@ import {
  * comment for why. Header pinout is nucleo32-layout.ts's shared one -
  * see that file's own comment for why it's identical across the family.
  */
-@customElement('wokwi-nucleo-c031c6')
+@customElement('iot-nucleo-c031c6')
 export class NucleoC031C6Element extends LitElement {
   readonly pinInfo = nucleo32Pins();
 

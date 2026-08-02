@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { analog, GND, VCC } from './pin';
 
-@customElement('wokwi-photoresistor-sensor')
+@customElement('iot-photoresistor-sensor')
 export class PhotoresistorSensorElement extends LitElement {
   @property() ledDO = false;
   @property() ledPower = false;

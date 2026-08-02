@@ -24,7 +24,7 @@ export interface NEMASpec {
 
 const defaultSize = 23;
 
-@customElement('wokwi-stepper-motor')
+@customElement('iot-stepper-motor')
 export class StepperMotorElement extends LitElement {
   @property({ type: Number }) angle = 0;
   @property() arrow = '';

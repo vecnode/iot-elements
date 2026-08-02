@@ -3,7 +3,7 @@ import './mpu6050-element';
 
 export default {
   title: 'MPU6050',
-  component: 'wokwi-mpu6050',
+  component: 'iot-mpu6050',
   argTypes: {
     value: { control: { type: 'boolean' } },
   },
@@ -12,6 +12,6 @@ export default {
   },
 };
 
-const Template = ({ value }) => html` <wokwi-mpu6050 .value=${value}></wokwi-mpu6050>`;
+const Template = ({ value }) => html` <iot-mpu6050 .value=${value}></iot-mpu6050>`;
 
 export const Default = Template.bind({});

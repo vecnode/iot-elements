@@ -20,7 +20,7 @@ const bandColors: { [key: number]: string } = {
 /**
  * Renders an axial-lead resistor with 4 color bands.
  */
-@customElement('wokwi-resistor')
+@customElement('iot-resistor')
 export class ResistorElement extends LitElement {
   /**
    * Resitance value, in ohms. The value is reflected in the color of the bands, according to

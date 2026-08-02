@@ -12,7 +12,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
 const CONTROL_PINS = ['ENABLE', 'MS1', 'MS2', 'MS3', 'RESET', 'SLEEP', 'STEP', 'DIR', 'GND', 'VDD'];
 const MOTOR_PINS = ['VMOT', 'GND', '2B', '2A', '1A', '1B'];
 
-@customElement('wokwi-a4988')
+@customElement('iot-a4988')
 export class A4988Element extends LitElement {
   readonly pinInfo: ElementPin[] = [
     ...CONTROL_PINS.map((name, i) => ({

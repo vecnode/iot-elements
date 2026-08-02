@@ -12,7 +12,7 @@ const knobCenter = {
 
 /** The potentiometer SVG is taken from https://freesvg.org/potentiometer and some of the
     functions are taken from https://github.com/vitaliy-bobrov/js-rocks knob component */
-@customElement('wokwi-potentiometer')
+@customElement('iot-potentiometer')
 export class PotentiometerElement extends LitElement {
   @property({ type: Number }) min = 0;
   @property({ type: Number }) max = 1023;

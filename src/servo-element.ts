@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from './pin';
 
-@customElement('wokwi-servo')
+@customElement('iot-servo')
 export class ServoElement extends LitElement {
   /**
    * The angle of the servo's horn

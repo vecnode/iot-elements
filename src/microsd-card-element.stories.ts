@@ -3,9 +3,9 @@ import './microsd-card-element';
 
 export default {
   title: 'microSD Card',
-  component: 'wokwi-microsd-card',
+  component: 'iot-microsd-card',
 };
 
-const Template = () => html`<wokwi-microsd-card></wokwi-microsd-card>`;
+const Template = () => html`<iot-microsd-card></iot-microsd-card>`;
 
 export const Default = Template.bind({});

@@ -3,7 +3,7 @@ import './rgb-led-element';
 
 export default {
   title: 'RGB Led',
-  component: 'wokwi-rgb-led',
+  component: 'iot-rgb-led',
   argTypes: {
     ledRed: { control: { type: 'range', min: 0, max: 1, step: 0.01 } },
     ledGreen: { control: { type: 'range', min: 0, max: 1, step: 0.01 } },
@@ -20,7 +20,7 @@ export default {
 
 const Template = ({ ledRed, ledGreen, ledBlue, background }) =>
   html`<div style="background:${background}">
-    <wokwi-rgb-led .ledRed=${ledRed} .ledGreen=${ledGreen} .ledBlue=${ledBlue}></wokwi-rgb-led>
+    <iot-rgb-led .ledRed=${ledRed} .ledGreen=${ledGreen} .ledBlue=${ledBlue}></iot-rgb-led>
   </div>`;
 
 export const Default = Template.bind({});

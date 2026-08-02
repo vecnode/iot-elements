@@ -15,7 +15,7 @@ const pixelHeight = 5;
  * on this element, e.g. `element.setPixel(0, 0, { r: 1, g: 0, b: 0 })` to set the leftmost
  * pixel to red.
  */
-@customElement('wokwi-neopixel-matrix')
+@customElement('iot-neopixel-matrix')
 export class NeopixelMatrixElement extends LitElement {
   /**
    * Number of rows in the matrix

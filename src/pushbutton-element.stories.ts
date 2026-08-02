@@ -11,7 +11,7 @@ interface PushbuttonArgs {
 
 const meta = {
   title: 'Pushbutton',
-  component: 'wokwi-pushbutton',
+  component: 'iot-pushbutton',
   args: {
     color: 'red',
     label: '',
@@ -26,13 +26,13 @@ const meta = {
     xray: { control: 'boolean' },
   },
   render: (args: PushbuttonArgs) => html`
-    <wokwi-pushbutton
+    <iot-pushbutton
       color=${args.color}
       label=${args.label}
       .xray=${args.xray}
       @button-press=${action('button-press')}
       @button-release=${action('button-release')}
-    ></wokwi-pushbutton>
+    ></iot-pushbutton>
   `,
 };
 
@@ -74,25 +74,25 @@ export const RedWithLongLabel: Story = {
 
 export const FourButtons: Story = {
   render: () => html`
-    <wokwi-pushbutton
+    <iot-pushbutton
       color="red"
       @button-press=${action('red button-press')}
       @button-release=${action('red button-release')}
-    ></wokwi-pushbutton>
-    <wokwi-pushbutton
+    ></iot-pushbutton>
+    <iot-pushbutton
       color="green"
       @button-press=${action('green button-press')}
       @button-release=${action('green button-release')}
-    ></wokwi-pushbutton>
-    <wokwi-pushbutton
+    ></iot-pushbutton>
+    <iot-pushbutton
       color="blue"
       @button-press=${action('blue button-press')}
       @button-release=${action('blue button-release')}
-    ></wokwi-pushbutton>
-    <wokwi-pushbutton
+    ></iot-pushbutton>
+    <iot-pushbutton
       color="white"
       @button-press=${action('white button-press')}
       @button-release=${action('white button-release')}
-    ></wokwi-pushbutton>
+    ></iot-pushbutton>
   `,
 };

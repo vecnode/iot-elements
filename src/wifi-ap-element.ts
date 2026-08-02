@@ -6,11 +6,11 @@ import { ElementPin } from './pin';
  * WiFi AP: a diagram-only pseudo-part representing a wireless access
  * point a board's WiFi radio associates with - not a real component
  * with leads, so it has no pins (`pinInfo` is empty, same convention
- * wokwi-text below uses). Not vendored - see 74hc165-element.ts's doc
+ * iot-text below uses). Not vendored - see 74hc165-element.ts's doc
  * comment for why. `ssid` is a label only; nothing in this fork actually
  * simulates WiFi association yet.
  */
-@customElement('wokwi-wifi-ap')
+@customElement('iot-wifi-ap')
 export class WifiApElement extends LitElement {
   @property() ssid = 'Wokwi-GUEST';
 

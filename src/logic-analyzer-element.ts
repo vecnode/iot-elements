@@ -11,7 +11,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
  */
 const CHANNELS = Array.from({ length: 8 }, (_, i) => `CH${i}`);
 
-@customElement('wokwi-logic-analyzer')
+@customElement('iot-logic-analyzer')
 export class LogicAnalyzerElement extends LitElement {
   readonly pinInfo: ElementPin[] = [
     ...CHANNELS.map((name, i) => ({ name, x: 2 + i * 3, y: 16, number: i + 1, signals: [] })),

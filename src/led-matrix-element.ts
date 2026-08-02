@@ -13,7 +13,7 @@ import { ElementPin } from './pin';
 const ROWS = Array.from({ length: 8 }, (_, i) => `ROW${i + 1}`);
 const COLS = Array.from({ length: 8 }, (_, i) => `COL${i + 1}`);
 
-@customElement('wokwi-led-matrix')
+@customElement('iot-led-matrix')
 export class LedMatrixElement extends LitElement {
   @property({ type: Array }) leds: number[] = new Array(64).fill(0);
   @property() color = '#ff3b30';

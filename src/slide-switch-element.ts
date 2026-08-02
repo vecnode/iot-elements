@@ -2,7 +2,7 @@ import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from './pin';
 
-@customElement('wokwi-slide-switch')
+@customElement('iot-slide-switch')
 export class SlideSwitchElement extends LitElement {
   @property() value = 0;
 

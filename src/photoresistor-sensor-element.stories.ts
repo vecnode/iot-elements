@@ -3,7 +3,7 @@ import './photoresistor-sensor-element';
 
 export default {
   title: 'Photoresistor Sensor',
-  component: 'wokwi-photoresistor-sensor',
+  component: 'iot-photoresistor-sensor',
   argTypes: {
     ledPower: { control: { type: 'boolean' } },
     ledDO: { control: { type: 'boolean' } },
@@ -15,7 +15,7 @@ export default {
 };
 
 const Template = ({ ledPower, ledDO }) =>
-  html`<wokwi-photoresistor-sensor .ledPower=${ledPower} .ledDO=${ledDO}>
-  </wokwi-photoresistor-sensor>`;
+  html`<iot-photoresistor-sensor .ledPower=${ledPower} .ledDO=${ledDO}>
+  </iot-photoresistor-sensor>`;
 
 export const Default = Template.bind({});

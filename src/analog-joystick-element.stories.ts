@@ -4,7 +4,7 @@ import './analog-joystick-element';
 
 export default {
   title: 'Analog Joystick',
-  component: 'wokwi-analog-joystick',
+  component: 'iot-analog-joystick',
   parameters: {
     docs: {
       description: {
@@ -15,8 +15,8 @@ export default {
 };
 
 export const Joystick = () =>
-  html`<wokwi-analog-joystick
+  html`<iot-analog-joystick
     @button-press=${action('button-press')}
     @button-release=${action('button-release')}
     @input=${action('input')}
-  ></wokwi-analog-joystick>`;
+  ></iot-analog-joystick>`;

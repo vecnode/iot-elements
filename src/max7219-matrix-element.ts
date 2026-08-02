@@ -13,7 +13,7 @@ import { headerPin, pcbBody } from './utils/pcb-board';
  */
 const PINS = ['VCC', 'GND', 'DIN', 'CS', 'CLK', 'DOUT'];
 
-@customElement('wokwi-max7219-matrix')
+@customElement('iot-max7219-matrix')
 export class Max7219MatrixElement extends LitElement {
   /** 8x8 = 64 values, row-major, 1 = lit. Not driven by anything yet. */
   @property({ type: Array }) leds: number[] = new Array(64).fill(0);

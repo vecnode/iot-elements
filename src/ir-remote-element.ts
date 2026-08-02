@@ -48,7 +48,7 @@ const keyboardKeyMap: { [key: string]: string } = {
   9: '9',
 };
 
-@customElement('wokwi-ir-remote')
+@customElement('iot-ir-remote')
 export class IRRemoteElement extends LitElement {
   static get styles() {
     return css`

@@ -8,7 +8,7 @@ interface BuzzerArgs {
 
 const meta = {
   title: 'Buzzer',
-  component: 'wokwi-buzzer',
+  component: 'iot-buzzer',
   parameters: {
     docs: {
       description: {
@@ -33,6 +33,6 @@ type Story = StoryObj<BuzzerArgs>;
 export const Default: Story = {
   render: (args) => html`
     <div style="height: 20px"></div>
-    <wokwi-buzzer .hasSignal=${args.hasSignal}></wokwi-buzzer>
+    <iot-buzzer .hasSignal=${args.hasSignal}></iot-buzzer>
   `,
 };

@@ -4,12 +4,12 @@ import './potentiometer-element';
 
 export default {
   title: 'Potentiometer',
-  component: 'wokwi-potentiometer',
+  component: 'iot-potentiometer',
 };
 
 const Template = ({ transform = '' }) => html`
   <span style="transform: ${transform}; display: inline-block;">
-    <wokwi-potentiometer @input=${action('input')} />
+    <iot-potentiometer @input=${action('input')} />
   </span>
 `;
 

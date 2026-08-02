@@ -3,7 +3,7 @@ import './led-bar-graph-element';
 
 export default {
   title: 'Led Bar Graph',
-  component: 'wokwi-led-bar-graph',
+  component: 'iot-led-bar-graph',
   argTypes: {
     color: { control: { type: 'color' } },
     values: 'string',
@@ -15,7 +15,7 @@ export default {
 };
 
 const Template = ({ color, values }) =>
-  html`<wokwi-led-bar-graph values=${values} color=${color}></wokwi-led-bar-graph>`;
+  html`<iot-led-bar-graph values=${values} color=${color}></iot-led-bar-graph>`;
 
 export const Red = Template.bind({});
 Red.args = { color: 'red' };

@@ -3,7 +3,7 @@ import './biaxial-stepper-element';
 
 export default {
   title: 'Biaxial Stepper',
-  component: 'wokwi-biaxial-stepper',
+  component: 'iot-biaxial-stepper',
   argTypes: {
     innerHandLength: { control: { type: 'range', min: 20, max: 70 } },
     innerHandAngle: { control: { type: 'range', min: 0, max: 360 } },
@@ -36,7 +36,7 @@ const Template = ({
   outerHandShape,
   outerHandAngle,
 }) =>
-  html`<wokwi-biaxial-stepper
+  html`<iot-biaxial-stepper
     .innerHandLength=${innerHandLength}
     .innerHandAngle=${innerHandAngle}
     .innerHandColor=${innerHandColor}
@@ -45,7 +45,7 @@ const Template = ({
     .outerHandAngle=${outerHandAngle}
     .outerHandColor=${outerHandColor}
     .outerHandShape=${outerHandShape}
-  ></wokwi-biaxial-stepper>`;
+  ></iot-biaxial-stepper>`;
 
 export const Default = Template.bind({});
 Default.args = {

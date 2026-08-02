@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('PIRMotionSensorElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new PIRMotionSensorElement());
-    await savePng('wokwi-pir-motion-sensor', pngData);
+    await savePng('iot-pir-motion-sensor', pngData);
   });
 });

@@ -7,7 +7,7 @@ import { mmToPix } from './utils/units';
 const pinHeight = 3;
 const pcbWidth = 6;
 
-@customElement('wokwi-led-ring')
+@customElement('iot-led-ring')
 export class LEDRingElement extends LitElement {
   /**
    * Number of pixels to in the LED ring

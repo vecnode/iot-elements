@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('HX711Element', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new HX711Element(), HX711Element.styles);
-    await savePng('wokwi-hx711', pngData);
+    await savePng('iot-hx711', pngData);
   });
 });

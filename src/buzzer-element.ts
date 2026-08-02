@@ -5,7 +5,7 @@ import { ElementPin } from './pin';
 /**
  * Renders a piezo electric buzzer.
  */
-@customElement('wokwi-buzzer')
+@customElement('iot-buzzer')
 export class BuzzerElement extends LitElement {
   /**
    * Boolean representing if an electric signal is coming in the buzzer

@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { GND, VCC } from './pin';
 
-@customElement('wokwi-gas-sensor')
+@customElement('iot-gas-sensor')
 export class GasSensorElement extends LitElement {
   @property() ledPower = false;
   @property() ledD0 = false;

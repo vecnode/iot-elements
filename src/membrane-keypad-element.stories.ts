@@ -10,7 +10,7 @@ interface MembraneKeypadArgs {
 
 const meta = {
   title: 'Membrane Keypad',
-  component: 'wokwi-membrane-keypad',
+  component: 'iot-membrane-keypad',
   args: {
     columns: 4,
     connector: false,
@@ -27,12 +27,12 @@ const meta = {
     },
   },
   render: ({ columns, connector }) => html`
-    <wokwi-membrane-keypad
+    <iot-membrane-keypad
       @button-press=${action('button-press')}
       @button-release=${action('button-release')}
       columns=${columns}
       .connector=${connector}
-    ></wokwi-membrane-keypad>
+    ></iot-membrane-keypad>
   `,
 } satisfies Meta<MembraneKeypadArgs>;
 
@@ -49,13 +49,13 @@ export const WithConnector: Story = {
 
 export const CustomKeys: Story = {
   render: ({ columns, connector }) => html`
-    <wokwi-membrane-keypad
+    <iot-membrane-keypad
       @button-press=${action('button-press')}
       @button-release=${action('button-release')}
       columns=${columns}
       .connector=${connector}
       .keys=${['1', '2', '3', '4', 'Q', 'W', 'E', 'R', 'A', 'S', 'D', 'F', '!', '@', '#', '$']}
-    ></wokwi-membrane-keypad>
+    ></iot-membrane-keypad>
   `,
 };
 

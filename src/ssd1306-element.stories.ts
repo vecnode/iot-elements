@@ -71,7 +71,7 @@ function toImageData(bitmap: Uint8Array, width: number, height: number) {
 
 const meta: Meta = {
   title: 'SSD1306',
-  component: 'wokwi-ssd1306',
+  component: 'iot-ssd1306',
   parameters: {
     docs: {
       description: {
@@ -85,11 +85,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => html`<wokwi-ssd1306></wokwi-ssd1306>`,
+  render: () => html`<iot-ssd1306></iot-ssd1306>`,
 };
 
 export const WokwiLogo: Story = {
   render: () => html`
-    <wokwi-ssd1306 .imageData=${toImageData(logoBitmap, 128, 64)}></wokwi-ssd1306>
+    <iot-ssd1306 .imageData=${toImageData(logoBitmap, 128, 64)}></iot-ssd1306>
   `,
 };

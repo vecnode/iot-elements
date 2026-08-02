@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { GND, VCC } from './pin';
 
-@customElement('wokwi-ky-040')
+@customElement('iot-ky-040')
 export class KY040Element extends LitElement {
   @property() angle = 0;
   @property() stepSize = 18;

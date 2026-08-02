@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('TiltSwitchElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new TiltSwitchElement());
-    await savePng('wokwi-tilt-switch', pngData);
+    await savePng('iot-tilt-switch', pngData);
   });
 });

@@ -12,7 +12,7 @@ interface ArduinoUnoArgs {
 
 const meta: Meta = {
   title: 'Arduino Uno',
-  component: 'wokwi-arduino-uno',
+  component: 'iot-arduino-uno',
   args: {
     led13: false,
     ledTX: false,
@@ -39,20 +39,20 @@ type Story = StoryObj<ArduinoUnoArgs>;
 
 export const UnoR3: Story = {
   render: (args) => html`
-    <wokwi-arduino-uno
+    <iot-arduino-uno
       .led13=${args.led13}
       .ledTX=${args.ledTX}
       .ledRX=${args.ledRX}
       .ledPower=${args.ledPower}
       @button-press=${action('button-press')}
       @button-release=${action('button-release')}
-    ></wokwi-arduino-uno>
+    ></iot-arduino-uno>
   `,
 };
 
 export const UnoR3Large: Story = {
   render: (args) => html`
-    <wokwi-arduino-uno
+    <iot-arduino-uno
       style="zoom: 2"
       .led13=${args.led13}
       .ledTX=${args.ledTX}
@@ -60,6 +60,6 @@ export const UnoR3Large: Story = {
       .ledPower=${args.ledPower}
       @button-press=${action('button-press')}
       @button-release=${action('button-release')}
-    ></wokwi-arduino-uno>
+    ></iot-arduino-uno>
   `,
 };

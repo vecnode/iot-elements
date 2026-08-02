@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from './pin';
 
-@customElement('wokwi-dht22')
+@customElement('iot-dht22')
 export class DHT22Element extends LitElement {
   // Reading-active indicator - same property name/shape as LEDElement's
   // own `value`, so this can be driven by physicalsim's existing generic

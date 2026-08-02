@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { analog, spi, usart } from './pin';
 
-@customElement('wokwi-nano-rp2040-connect')
+@customElement('iot-nano-rp2040-connect')
 export class NanoRP2040ConnectElement extends LitElement {
   @property() ledRed = 0;
   @property() ledGreen = 0;

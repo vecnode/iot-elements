@@ -12,7 +12,7 @@ const backgroundColors: { [key: string]: string } = {
   blue: '#000eff',
 };
 
-@customElement('wokwi-lcd1602')
+@customElement('iot-lcd1602')
 export class LCD1602Element extends LitElement {
   @property() color = 'black';
   @property() background = 'green';

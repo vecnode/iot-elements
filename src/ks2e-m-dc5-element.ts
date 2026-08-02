@@ -9,7 +9,7 @@ const x2Pos = 25;
 const x3Pos = 45;
 const x4Pos = 74;
 
-@customElement('wokwi-ks2e-m-dc5')
+@customElement('iot-ks2e-m-dc5')
 export class KS2EMDC5Element extends LitElement {
   // Energized indicator (coil driven) - same property name/shape as
   // LEDElement's own `value`, so this can be driven by the exact same

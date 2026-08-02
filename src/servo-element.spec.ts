@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('ServoElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new ServoElement());
-    await savePng('wokwi-servo', pngData);
+    await savePng('iot-servo', pngData);
   });
 });

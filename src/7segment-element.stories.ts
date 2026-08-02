@@ -7,7 +7,7 @@ import { SevenSegmentElement } from './7segment-element';
 
 const meta: Meta = {
   title: '7 Segment',
-  component: 'wokwi-7segment',
+  component: 'iot-7segment',
   parameters: {
     docs: {
       description: {
@@ -22,44 +22,44 @@ type Story = StoryObj<typeof meta>;
 
 export const RedFour: Story = {
   render: () => html`
-    <wokwi-7segment color="red" values="[0,1,1,0,0,1,1,1]" pins="extend"></wokwi-7segment>
+    <iot-7segment color="red" values="[0,1,1,0,0,1,1,1]" pins="extend"></iot-7segment>
   `,
 };
 
 export const GreenFive: Story = {
-  render: () => html` <wokwi-7segment color="green" values="[1,0,1,1,0,1,1,0]"></wokwi-7segment> `,
+  render: () => html` <iot-7segment color="green" values="[1,0,1,1,0,1,1,0]"></iot-7segment> `,
 };
 
 export const TwoYellowDigits: Story = {
   render: () => html`
-    <wokwi-7segment
+    <iot-7segment
       color="yellow"
       digits="2"
       values="[0,1,1,0,0,1,1,1,0,1,1,0,0,1,1,0]"
-    ></wokwi-7segment>
+    ></iot-7segment>
   `,
 };
 
 export const ThreeWhiteDigits: Story = {
   render: () => html`
-    <wokwi-7segment
+    <iot-7segment
       color="white"
       digits="3"
       values="[0,1,1,0,0,1,1,1,0,1,1,0,0,1,1,0,0,1,1,0]"
-    ></wokwi-7segment>
+    ></iot-7segment>
   `,
 };
 
 export const ClockMode: Story = {
   render: () => {
-    return html`<wokwi-7segment
+    return html`<iot-7segment
       data-testid="clock-display"
       color="red"
       digits="4"
       colon="true"
       pins="top"
       values="[0,1,1,0,0,0,0,0,0,1,1,0,0,1,1,0,1,1,1,1,1,1,0,0,0,1,1,0,0,1,1,0]"
-    ></wokwi-7segment>`;
+    ></iot-7segment>`;
   },
   play: async ({ canvas, abortSignal }) => {
     const sevenSegment = canvas.getByTestId<SevenSegmentElement>('clock-display');
@@ -72,12 +72,12 @@ export const ClockMode: Story = {
 
 export const BlueSpinner: Story = {
   render: () => {
-    return html`<wokwi-7segment
+    return html`<iot-7segment
       data-testid="spinner-display"
       color="#8080ff"
       pins="none"
       .values=${[1, 0, 0, 0, 0, 0, 0, 0]}
-    ></wokwi-7segment>`;
+    ></iot-7segment>`;
   },
 
   play: async ({ canvas, abortSignal }) => {

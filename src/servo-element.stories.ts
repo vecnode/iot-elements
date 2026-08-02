@@ -13,7 +13,7 @@ interface ServoArgs {
 
 const meta = {
   title: 'Servo',
-  component: 'wokwi-servo',
+  component: 'iot-servo',
   parameters: {
     docs: {
       description: {
@@ -44,12 +44,12 @@ const meta = {
     },
   },
   render: (args: ServoArgs) =>
-    html`<wokwi-servo
+    html`<iot-servo
       data-testid="servo"
       angle=${args.angle}
       horn=${args.horn}
       hornColor=${args.hornColor}
-    ></wokwi-servo>`,
+    ></iot-servo>`,
 } satisfies Meta<ServoArgs>;
 
 export default meta;
@@ -82,7 +82,7 @@ export const HornDouble: Story = {
     angle: 45,
     horn: 'double',
   },
-  render: (args) => html`<wokwi-servo horn=${args.horn} angle=${args.angle}></wokwi-servo>`,
+  render: (args) => html`<iot-servo horn=${args.horn} angle=${args.angle}></iot-servo>`,
 };
 
 export const HornCross: Story = {
@@ -90,5 +90,5 @@ export const HornCross: Story = {
     angle: 45,
     horn: 'cross',
   },
-  render: (args) => html`<wokwi-servo horn=${args.horn} angle=${args.angle}></wokwi-servo>`,
+  render: (args) => html`<iot-servo horn=${args.horn} angle=${args.angle}></iot-servo>`,
 };

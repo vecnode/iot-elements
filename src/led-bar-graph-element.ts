@@ -19,7 +19,7 @@ const colorPalettes: Record<string, string[]> = {
   BCYR: [blue, cyan, cyan, cyan, cyan, yellow, yellow, yellow, red, red],
 };
 
-@customElement('wokwi-led-bar-graph')
+@customElement('iot-led-bar-graph')
 export class LedBarGraphElement extends LitElement {
   /** The color of a lit segment. Either HTML color or the special values GYR / BCYR */
   @property() color = 'red';

@@ -4,11 +4,11 @@ import './ir-remote-element';
 
 export default {
   title: 'IR Remote',
-  component: 'wokwi-ir-remote',
+  component: 'iot-ir-remote',
 };
 
 export const Default = () =>
-  html`<wokwi-ir-remote
+  html`<iot-ir-remote
     @button-press=${action('button-press')}
     @button-release=${action('button-release')}
-  ></wokwi-ir-remote>`;
+  ></iot-ir-remote>`;

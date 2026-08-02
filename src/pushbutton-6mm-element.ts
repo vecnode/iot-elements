@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from './pin';
 import { ctrlCmdPressed, SPACE_KEYS } from './utils/keys';
 
-@customElement('wokwi-pushbutton-6mm')
+@customElement('iot-pushbutton-6mm')
 export class Pushbutton6mmElement extends LitElement {
   @property() color = 'red';
   @property() pressed = false;

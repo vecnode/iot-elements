@@ -2,7 +2,7 @@ import { html, LitElement, svg } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 
-@customElement('wokwi-dip-switch-8')
+@customElement('iot-dip-switch-8')
 export class DipSwitch8Element extends LitElement {
   @property({ type: Array }) values = [0, 0, 0, 0, 0, 0, 0, 0];
 

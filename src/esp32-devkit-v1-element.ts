@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { i2c, spi, usart } from './pin';
 
-@customElement('wokwi-esp32-devkit-v1')
+@customElement('iot-esp32-devkit-v1')
 export class ESP32DevkitV1Element extends LitElement {
   @property() led1 = false;
   @property() ledPower = false;

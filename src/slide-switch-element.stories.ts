@@ -4,8 +4,8 @@ import './slide-switch-element';
 
 export default {
   title: 'Slide Switch',
-  component: 'wokwi-slide-switch',
+  component: 'iot-slide-switch',
 };
 
 export const SlideSwitch = () =>
-  html`<wokwi-slide-switch @input=${action('input')}></wokwi-slide-switch>`;
+  html`<iot-slide-switch @input=${action('input')}></iot-slide-switch>`;

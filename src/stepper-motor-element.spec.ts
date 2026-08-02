@@ -5,6 +5,6 @@ import { renderToPng, savePng } from './utils/test-utils';
 describe('StepperMotorElement', () => {
   it('should render to svg', async () => {
     const pngData = await renderToPng(new StepperMotorElement());
-    await savePng('wokwi-stepper-motor', pngData);
+    await savePng('iot-stepper-motor', pngData);
   });
 });

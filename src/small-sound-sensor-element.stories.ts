@@ -3,7 +3,7 @@ import './small-sound-sensor-element';
 
 export default {
   title: 'Small Sound Sensor',
-  component: 'wokwi-small-sound-sensor',
+  component: 'iot-small-sound-sensor',
   argTypes: {
     ledPower: { control: { type: 'boolean' } },
     ledSignal: { control: { type: 'boolean' } },
@@ -15,9 +15,9 @@ export default {
 };
 
 const Template = ({ ledPower, ledSignal }) =>
-  html`<wokwi-small-sound-sensor
+  html`<iot-small-sound-sensor
     .ledPower=${ledPower}
     .ledSignal=${ledSignal}
-  ></wokwi-small-sound-sensor>`;
+  ></iot-small-sound-sensor>`;
 
 export const Default = Template.bind({});

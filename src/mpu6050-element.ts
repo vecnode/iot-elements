@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from '.';
 import { GND, i2c, VCC } from './pin';
 
-@customElement('wokwi-mpu6050')
+@customElement('iot-mpu6050')
 export class MPU6050Element extends LitElement {
   // Renamed from led1 - matches LEDElement's own `value` naming so this
   // can be driven by physicalsim's existing generic "read" role

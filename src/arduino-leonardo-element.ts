@@ -124,7 +124,7 @@ const PIN_TABLE_RAW: RawPin[] = [
   { name: 'A5', x: 185.111, y: 144, signals: [analog(5), i2c('SCL')] }, // PF0
 ];
 
-@customElement('wokwi-arduino-leonardo')
+@customElement('iot-arduino-leonardo')
 export class ArduinoLeonardoElement extends LitElement {
   readonly pinInfo: ElementPin[] = PIN_TABLE_RAW.map((pin) => ({
     name: pin.name,

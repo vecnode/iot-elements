@@ -2,7 +2,7 @@ import { html, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { ElementPin, GND, i2c, VCC } from './pin';
 
-@customElement('wokwi-ds1307')
+@customElement('iot-ds1307')
 export class Ds1307Element extends LitElement {
   readonly pinInfo: ElementPin[] = [
     { name: 'GND', y: 15, x: 9.5, number: 1, signals: [GND()] },

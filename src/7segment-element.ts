@@ -3,7 +3,7 @@ import { customElement, property } from 'lit/decorators.js';
 import { ElementPin } from './pin';
 import { mmToPix } from './utils/units';
 
-@customElement('wokwi-7segment')
+@customElement('iot-7segment')
 export class SevenSegmentElement extends LitElement {
   /** The color of a lit segment */
   @property() color = 'red';

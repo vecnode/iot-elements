@@ -2,7 +2,7 @@ import { css, html, LitElement, svg } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ElementPin, GND, VCC } from './pin';
 
-@customElement('wokwi-hx711')
+@customElement('iot-hx711')
 export class HX711Element extends LitElement {
   @property() type: '5kg' | '50kg' | 'gauge' | undefined;
 

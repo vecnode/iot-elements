@@ -9,7 +9,7 @@ import { ElementPin, GND, VCC } from './pin';
  * 74hc165-element.ts's doc comment for why. 4-pin layout (12V, R, G, B)
  * is the standard one these strips ship with.
  */
-@customElement('wokwi-led-strip')
+@customElement('iot-led-strip')
 export class LedStripElement extends LitElement {
   @property() r = 0;
   @property() g = 0;
