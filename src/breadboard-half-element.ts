@@ -1,6 +1,7 @@
 import { html, LitElement, svg, type TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { ElementPin, GND, VCC } from './pin';
+import { mmToPix } from './utils/units';
 
 /**
  * A half-size (30-column) solderless breadboard - not vendored from
@@ -47,15 +48,25 @@ function colX(col: number): number {
   return col * PITCH + Math.floor((col - 1) / GROUP_SIZE) * GROUP_GAP;
 }
 
+// pinInfo coordinates are consumed as plain CSS pixels of the rendered
+// element by physicalsim's marker overlay (confirmed against
+// utils/show-pins-element.ts's own reference overlay, which has no
+// viewBox and uses pin.x/pin.y directly as CSS px) - since this
+// element's own SVG is authored and drawn in mm (matching its viewBox,
+// for readable geometry math above), every pinInfo coordinate needs the
+// same mm-to-CSS-px factor (mmToPix, 1mm = 3.78px at 96dpi) the render
+// itself gets from its `width="...mm"` attribute, or a placed board's
+// pin markers land bunched into a fraction of its actual rendered size
+// instead of tracking the real holes.
 function terminalPins(): ElementPin[] {
   const pins: ElementPin[] = [];
   for (let col = 1; col <= COLUMNS; col++) {
-    const x = colX(col);
+    const x = colX(col) * mmToPix;
     TOP_ROWS.forEach((row, i) => {
-      pins.push({ name: `${col}t.${row}`, x, y: ROW_A_Y + i * PITCH, signals: [] });
+      pins.push({ name: `${col}t.${row}`, x, y: (ROW_A_Y + i * PITCH) * mmToPix, signals: [] });
     });
     BOTTOM_ROWS.forEach((row, i) => {
-      pins.push({ name: `${col}b.${row}`, x, y: ROW_F_Y + i * PITCH, signals: [] });
+      pins.push({ name: `${col}b.${row}`, x, y: (ROW_F_Y + i * PITCH) * mmToPix, signals: [] });
     });
   }
   return pins;
@@ -64,11 +75,11 @@ function terminalPins(): ElementPin[] {
 function railPins(): ElementPin[] {
   const pins: ElementPin[] = [];
   for (let col = 1; col <= COLUMNS; col++) {
-    const x = colX(col);
-    pins.push({ name: `tn.${col}`, x, y: RAIL_TOP_NEG_Y, signals: [GND()] });
-    pins.push({ name: `tp.${col}`, x, y: RAIL_TOP_POS_Y, signals: [VCC()] });
-    pins.push({ name: `bp.${col}`, x, y: RAIL_BOTTOM_POS_Y, signals: [VCC()] });
-    pins.push({ name: `bn.${col}`, x, y: RAIL_BOTTOM_NEG_Y, signals: [GND()] });
+    const x = colX(col) * mmToPix;
+    pins.push({ name: `tn.${col}`, x, y: RAIL_TOP_NEG_Y * mmToPix, signals: [GND()] });
+    pins.push({ name: `tp.${col}`, x, y: RAIL_TOP_POS_Y * mmToPix, signals: [VCC()] });
+    pins.push({ name: `bp.${col}`, x, y: RAIL_BOTTOM_POS_Y * mmToPix, signals: [VCC()] });
+    pins.push({ name: `bn.${col}`, x, y: RAIL_BOTTOM_NEG_Y * mmToPix, signals: [GND()] });
   }
   return pins;
 }
