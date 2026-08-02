@@ -1,4 +1,5 @@
 import './react-types';
+export { BreadboardHalfElement } from './breadboard-half-element';
 export { HC165Element } from './74hc165-element';
 export { HC595Element } from './74hc595-element';
 export { A4988Element } from './a4988-element';
